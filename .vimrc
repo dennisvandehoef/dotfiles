@@ -26,6 +26,7 @@ set smartindent
 set showmode
 set showcmd
 set hidden
+color ir_black
 
 
 "  ---------------------------------------------------------------------------
