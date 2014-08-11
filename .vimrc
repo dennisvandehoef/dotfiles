@@ -58,7 +58,24 @@ endif
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>"
+nnoremap <Down> :echoe "Use j"<CR>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
 
 " NERDTree
 nmap <C-d> :NERDTree<CR>
+
+
+"  ---------------------------------------------------------------------------
+"  Plugins
+"  ---------------------------------------------------------------------------
+
+" eradicate all trailing whitespace all the time
+let g:DeleteTrailingWhitespace = 1
+let g:DeleteTrailingWhitespace_Action = 'delete'
+
+" AutoClose
+let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}'}
+let g:AutoCloseProtectedRegions = ["Character"]
