@@ -11,6 +11,7 @@ set noswapfile
 set noswapfile
 set nofoldenable
 set showmatch
+set encoding=utf-8
 
 "  ---------------------------------------------------------------------------
 "  UI
@@ -20,13 +21,18 @@ set showmatch
 set number
 set showtabline=2
 set title
-set encoding=utf-8
 set autoindent
 set smartindent
 set showmode
 set showcmd
 set hidden
 color ir_black
+
+" check to make sure vim has been compiled with colorcolumn support
+" before enabling it
+if exists("+colorcolumn")
+  set colorcolumn=80
+endif
 
 
 "  ---------------------------------------------------------------------------
@@ -40,12 +46,6 @@ set expandtab
 set nowrap
 set textwidth=100
 set formatoptions=n
-
-" check to make sure vim has been compiled with colorcolumn support
-" before enabling it
-if exists("+colorcolumn")
-  set colorcolumn=80
-endif
 
 
 "  ---------------------------------------------------------------------------
