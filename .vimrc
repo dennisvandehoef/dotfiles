@@ -5,7 +5,7 @@ execute pathogen#infect()
 "  ---------------------------------------------------------------------------
 
 set autoread
-syntax enable
+syntax on
 set nobackup
 set noswapfile
 set noswapfile
