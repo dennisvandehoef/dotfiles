@@ -26,7 +26,9 @@ set smartindent
 set showmode
 set showcmd
 set hidden
+set go-=T
 color ir_black
+set mousehide
 
 " check to make sure vim has been compiled with colorcolumn support
 " before enabling it
