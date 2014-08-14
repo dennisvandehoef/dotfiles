@@ -53,6 +53,7 @@ set formatoptions=n
 
 set incsearch
 set hlsearch
+set ignorecase
 
 
 "  ---------------------------------------------------------------------------
