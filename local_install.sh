@@ -25,4 +25,4 @@ sudo apt-get clean
 sudo apt-get autoclean
 
 echo -e "\n\n\n\n\nFirst step is done\n\n\n\n\n"
-echo -e "next:\n 1)Create SSH key end add on github.com"
+echo -e "TODO:\n\nCreate SSH key end add on github.com\nManual: https://help.github.com/articles/generating-ssh-keys/"
