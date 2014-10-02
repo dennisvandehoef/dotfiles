@@ -16,10 +16,8 @@ sudo apt-get install tree
 sudo apt-get install unrar
 
 echo -e "\n\n\n\n\nInstalling Ruby\n\n\n\n\n"
-sudo apt-get install ruby-rvm
-rvm install ruby --latest
-sudo gem update --system
-sudo gem install rails
+\curl -sSL https://get.rvm.io | bash -s stable --rails
+source ~/.rvm/scripts/rvm
 
 echo -e "\n\n\n\n\nCleanup\n\n\n\n\n"
 sudo apt-get autoremove
