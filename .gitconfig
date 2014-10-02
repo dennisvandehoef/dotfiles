@@ -23,3 +23,9 @@
   interactive = auto
   status = auto
   ui = true
+[merge]
+  tool = vimdiff
+[core]
+  editor = vim
+  mergeoptions = "--no-edit"
+  precomposeunicode = fals
