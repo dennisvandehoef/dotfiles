@@ -28,7 +28,7 @@
 [core]
   editor = vim
   mergeoptions = "--no-edit"
-  precomposeunicode = fals
- [remote "dotfiles"]                                                               
+  precomposeunicode = false
+[remote "dotfiles"]                                                               
   url = git@github.com:dennisvandehoef/dotfiles.git                             
   fetch = +refs/heads/*:refs/remotes/origin/*   
