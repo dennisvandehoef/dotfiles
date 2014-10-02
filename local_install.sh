@@ -29,3 +29,5 @@ sudo apt-get autoclean
 
 echo -e "\n\n\n\n\nFirst step is done\n\n\n\n\n"
 echo -e "TODO:\n\nCreate SSH key end add on github.com\nManual: https://help.github.com/articles/generating-ssh-keys/"
+echo -e "\n\nthen run the command:"
+echo -e "curl https://raw.githubusercontent.com/dennisvandehoef/dotfiles/master/local_install_part_2.sh -o - | sh"
