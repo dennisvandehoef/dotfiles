@@ -9,12 +9,12 @@ echo -e "\n\n\n\n\nUpdate apt-get\n\n\n\n\n"
 sudo apt-get update
 
 echo -e "\n\n\n\n\nInstalling software\n\n\n\n\n"
-sudo apt-get install mysql-server
+sudo apt-get install -y mysql-server
 sudo apt-get install -y mongodb-org
-sudo apt-get install git
-sudo apt-get install tree
-sudo apt-get install unrar
-sudo apt-get install vim-gnome
+sudo apt-get install -y git
+sudo apt-get install -y tree
+sudo apt-get install -y unrar
+sudo apt-get install -y vim-gnome
 
 echo -e "\n\n\n\n\nInstalling Ruby\n\n\n\n\n"
 \curl -sSL https://get.rvm.io | bash -s stable --rails
