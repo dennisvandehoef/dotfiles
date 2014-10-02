@@ -1,0 +1,25 @@
+[user]
+  name = Dennis van de Hoef
+  email = dennisvdhoef@gmail.com
+[alias]
+  br = branch
+  ci = commit
+  co = checkout
+  df = diff
+  rb = rebase
+  st = status
+  sa = stash
+  mt = mergetool
+  cp = cherry-pick
+  sm = submodule
+  pl = pull --rebase
+  ps = push
+[push]
+  default = simple
+[color]
+  ui = auto
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+  ui = true
