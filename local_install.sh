@@ -14,10 +14,13 @@ sudo apt-get install -y mongodb-org
 sudo apt-get install git
 sudo apt-get install tree
 sudo apt-get install unrar
+sudo apt-get install vim-gnome
 
 echo -e "\n\n\n\n\nInstalling Ruby\n\n\n\n\n"
 \curl -sSL https://get.rvm.io | bash -s stable --rails
 source ~/.rvm/scripts/rvm
+
+
 
 echo -e "\n\n\n\n\nCleanup\n\n\n\n\n"
 sudo apt-get autoremove
