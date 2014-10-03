@@ -1,0 +1,5 @@
+alias rubocop="bundle exec rubocop"
+alias code="cd ~/code"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
