@@ -1,6 +1,9 @@
-alias rubocop="bundle exec rubocop"
-alias g="git"
-alias code="cd ~/code"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+
+alias code="cd ~/code"
+
+alias g="git"
+
+alias rubocop="bundle exec rubocop"
