@@ -18,6 +18,6 @@ rm -f ~/.gitconfig 2>/dev/null
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 
 echo -e "\n\n\n\n\nConfig aliases\n\n\n\n\n"
-cp -r ~/.aliases ~/.aliases.old 2>/dev/null
-rm -f ~/.aliases 2>/dev/null
-ln -s ~/dotfiles/.aliases ~/.aliases
+cp -r ~/.bash_aliases ~/.bash_aliases.old 2>/dev/null
+rm -f ~/.bash_aliases 2>/dev/null
+ln -s ~/dotfiles/.aliases ~/.bash_aliases
