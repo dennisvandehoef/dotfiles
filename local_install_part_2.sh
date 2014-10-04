@@ -1,5 +1,6 @@
 echo -e "\n\n\n\n\nCreating git reposetory\n\n\n\n\n"
 mkdir ~/dotfiles
+mkdir ~/code
 git clone git@github.com:dennisvandehoef/dotfiles.git ~/dotfiles
 
 echo -e "\n\n\n\n\nConfig VIM\n\n\n\n\n"
