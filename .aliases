@@ -6,4 +6,6 @@ alias code="cd ~/code"
 
 alias g="git"
 
+alias kp="cd ~/code/kaeuferportal"
+
 alias rubocop="bundle exec rubocop"
