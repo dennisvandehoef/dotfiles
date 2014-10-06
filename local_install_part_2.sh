@@ -17,6 +17,9 @@ echo -e "\n\n\n\n\nConfig GIT\n\n\n\n\n"
 cp -r ~/.gitconfig ~/.vigitconfigm.old 2>/dev/null
 rm -f ~/.gitconfig 2>/dev/null
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+cp -r ~/.gitignore_global ~/.gitignore_global.old 2>/dev/null
+rm -f ~/.gitignore_global 2>/dev/null
+ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
 
 echo -e "\n\n\n\n\nConfig aliases\n\n\n\n\n"
 cp -r ~/.bash_aliases ~/.bash_aliases.old 2>/dev/null
