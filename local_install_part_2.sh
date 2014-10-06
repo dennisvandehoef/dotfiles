@@ -14,7 +14,7 @@ ln -s ~/dotfiles/.vimrc ~/.vimrc
 
 
 echo -e "\n\n\n\n\nConfig GIT\n\n\n\n\n"
-cp -r ~/.gitconfig ~/.vigitconfigm.old 2>/dev/null
+cp -r ~/.gitconfig ~/.gitconfig.old 2>/dev/null
 rm -f ~/.gitconfig 2>/dev/null
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 cp -r ~/.gitignore_global ~/.gitignore_global.old 2>/dev/null
