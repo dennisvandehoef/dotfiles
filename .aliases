@@ -2,6 +2,8 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
+alias be="bundle exec"
+
 alias code="cd ~/code"
 
 alias g="git"
