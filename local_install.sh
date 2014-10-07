@@ -1,6 +1,3 @@
-echo -e "\n\n\n\n\nUpdating the system\n\n\n\n\n"
-update
-
 echo -e "\n\n\n\n\nprepare for MongoDB\n\n\n\n\n"
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
@@ -15,10 +12,14 @@ sudo apt-get install -y git
 sudo apt-get install -y tree
 sudo apt-get install -y unrar
 sudo apt-get install -y vim-gnome
+sudo apt-get install -y nodejs
 
 echo -e "\n\n\n\n\nInstalling Ruby\n\n\n\n\n"
 \curl -sSL https://get.rvm.io | bash -s stable --rails
 source ~/.rvm/scripts/rvm
+
+sudo gem install rails
+
 
 
 

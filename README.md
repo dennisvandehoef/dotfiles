@@ -1,4 +1,5 @@
 ## Quick Install
+
 first:
 
     sudo apt-get install curl
@@ -10,3 +11,4 @@ second:
 third:
 
     curl https://raw.githubusercontent.com/dennisvandehoef/dotfiles/master/local_install_part_2.sh -o - | sh
+
