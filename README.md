@@ -1,4 +1,5 @@
 ## Quick Install
+
 first:
 
     sudo apt-get install curl
