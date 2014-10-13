@@ -12,4 +12,5 @@ alias h="cd ~/"
 
 alias kp="cd ~/code/kaeuferportal"
 
+alias rbp="bundle exec rails_best_practices"
 alias rubocop="bundle exec rubocop"
