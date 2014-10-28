@@ -1,3 +1,5 @@
+rvm rvmrc warning ignore all.rvmrcs
+
 echo -e "\n\n\n\n\nCreating git reposetory\n\n\n\n\n"
 mkdir ~/dotfiles
 mkdir ~/code
