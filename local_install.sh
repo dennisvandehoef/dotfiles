@@ -10,6 +10,7 @@ sudo apt-get install -y mysql-server
 sudo apt-get install -y mongodb-org
 sudo apt-get install -y git
 sudo apt-get install -y tree
+sudo apt-get install -y bundler
 sudo apt-get install -y unrar
 sudo apt-get install -y vim-gnome
 sudo apt-get install -y nodejs
