@@ -9,6 +9,7 @@ alias code="cd ~/code"
 alias g="git"
 alias gpl="git pl"
 alias gps="git push"
+alias gst="git st"
 
 alias h="cd ~/"
 
