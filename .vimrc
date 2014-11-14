@@ -14,11 +14,19 @@ set showmatch
 set encoding=utf-8
 
 "  ---------------------------------------------------------------------------
+"  AUTOCOMPLETE
+"  ---------------------------------------------------------------------------
+set omnifunc=syntaxcomplete#Complete
+set completeopt=menu,longest
+
+"  ---------------------------------------------------------------------------
 "  UI
 "  ---------------------------------------------------------------------------
 
 set number
 set showtabline=2
+set winwidth=81
+set cursorline
 set title
 set autoindent
 set smartindent
@@ -82,5 +90,5 @@ let g:DeleteTrailingWhitespace = 1
 let g:DeleteTrailingWhitespace_Action = 'delete'
 
 " AutoClose
-let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}'}
-let g:AutoCloseProtectedRegions = ["Character"]
+let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}', '<': '>'}
+let g:AutoCloseProtectedRegions =  ["Comment", "String", "Character"]

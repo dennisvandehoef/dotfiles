@@ -7,6 +7,8 @@ alias be="bundle exec"
 alias code="cd ~/code"
 
 alias g="git"
+alias gpl="git pl"
+alias gps="git push"
 
 alias h="cd ~/"
 
