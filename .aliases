@@ -1,6 +1,5 @@
 alias ..="cd .."
 alias ...="cd ../.."
-alias ....="cd ../../.."
 
 alias be="bundle exec"
 
@@ -10,10 +9,10 @@ alias g="git"
 alias gpl="git pl"
 alias gps="git push"
 alias gst="git st"
-
-alias h="cd ~/"
+alias gplmaster="git fetch origin && git rebase origin/master"
 
 alias kp="cd ~/code/kaeuferportal"
 
+alias spec="rake test:prepare && rake db:migrate RAILS_ENV=test && rspec spec"
 alias rbp="bundle exec rails_best_practices"
 alias rubocop="bundle exec rubocop"
