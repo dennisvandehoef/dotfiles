@@ -1,3 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/usr/local/etc/nginx/sites-enabled'
+let g:netrw_dirhist_2='/Users/dennis/code/kaeuferportal/cms/app/views/product_forms/inquiry_form/image_slider'
+let g:netrw_dirhist_3='/Users/dennis/code/kaeuferportal/cms/app/views/product_forms/inquiry_form'
+let g:netrw_dirhist_4='/Users/dennis/code/kaeuferportal/cms/app/views/product_forms/inquiry_form/default'
