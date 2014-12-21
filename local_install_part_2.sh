@@ -1,4 +1,5 @@
 rvm rvmrc warning ignore all.rvmrcs
+rvm rvmrc warning ignore allGemfiles
 
 echo -e "\n\n\n\n\nCreating git reposetory\n\n\n\n\n"
 mkdir ~/dotfiles
