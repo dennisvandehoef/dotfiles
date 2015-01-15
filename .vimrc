@@ -3,7 +3,6 @@ execute pathogen#infect()
 "  ---------------------------------------------------------------------------
 "  General
 "  ---------------------------------------------------------------------------
-
 set autoread
 syntax on
 set nobackup
@@ -18,6 +17,7 @@ set encoding=utf-8
 "  ---------------------------------------------------------------------------
 set omnifunc=syntaxcomplete#Complete
 set completeopt=menu,longest
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 "  ---------------------------------------------------------------------------
 "  UI
@@ -64,7 +64,6 @@ set incsearch
 set hlsearch
 set ignorecase
 
-
 "  ---------------------------------------------------------------------------
 "  Mappings
 "  ---------------------------------------------------------------------------
@@ -90,5 +89,5 @@ let g:DeleteTrailingWhitespace = 1
 let g:DeleteTrailingWhitespace_Action = 'delete'
 
 " AutoClose
-let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}', '<': '>'}
+let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}'}
 let g:AutoCloseProtectedRegions =  ["Comment", "String", "Character"]
