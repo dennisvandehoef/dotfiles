@@ -32,12 +32,12 @@ endfunction " }}}2
 " Sets error highlights in the cuirrent window
 function! g:SyntasticHighlightingNotifier.refresh(loclist) " {{{2
     if self.enabled()
+        call self.reset(a:loclist)
         call syntastic#log#debug(g:SyntasticDebugNotifications, 'highlighting: refresh')
-        call self._reset()
         let buf = bufnr('')
         let issues = filter(a:loclist.copyRaw(), 'v:val["bufnr"] == buf')
         for item in issues
-            let group = 'Syntastic' . get(item, 'subtype', '') . ( item['type'] ==? 'E' ? 'Error' : 'Warning' )
+            let group = item['type'] ==? 'E' ? 'SyntasticError' : 'SyntasticWarning'
 
             " The function `Syntastic_{filetype}_{checker}_GetHighlightRegex` is
             " used to override default highlighting.
@@ -64,7 +64,11 @@ endfunction " }}}2
 function! g:SyntasticHighlightingNotifier.reset(loclist) " {{{2
     if s:has_highlighting
         call syntastic#log#debug(g:SyntasticDebugNotifications, 'highlighting: reset')
-        call self._reset()
+        for match in getmatches()
+            if stridx(match['group'], 'Syntastic') == 0
+                call matchdelete(match['id'])
+            endif
+        endfor
     endif
 endfunction " }}}2
 " @vimlint(EVL103, 0, a:loclist)
@@ -78,25 +82,12 @@ function! g:SyntasticHighlightingNotifier._setup() " {{{2
     if s:has_highlighting
         if !hlexists('SyntasticError')
             highlight link SyntasticError SpellBad
+
         endif
         if !hlexists('SyntasticWarning')
             highlight link SyntasticWarning SpellCap
         endif
-        if !hlexists('SyntasticStyleError')
-            highlight link SyntasticStyleError SyntasticError
-        endif
-        if !hlexists('SyntasticStyleWarning')
-            highlight link SyntasticStyleWarning SyntasticWarning
-        endif
     endif
-endfunction " }}}2
-
-function! g:SyntasticHighlightingNotifier._reset() " {{{2
-    for match in getmatches()
-        if stridx(match['group'], 'Syntastic') == 0
-            call matchdelete(match['id'])
-        endif
-    endfor
 endfunction " }}}2
 
 " }}}1

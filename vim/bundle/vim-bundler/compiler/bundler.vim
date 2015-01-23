@@ -11,7 +11,6 @@ set cpo-=C
 CompilerSet makeprg=bundle
 
 CompilerSet errorformat=
-      \%+GCould\ not\ find\ gem\ '%.%#,
       \%+E%f:%l:\ parse\ error,
       \%W%f:%l:\ warning:\ %m,
       \%E%f:%l:in\ %*[^:]:\ %m,
@@ -20,8 +19,6 @@ CompilerSet errorformat=
       \%-Z%\tfrom\ %f:%l,
       \%-Z%p^,
       \%-G%.%#
-
-" -complete=customlist,bundler#complete
 
 let &cpo = s:cpo_save
 unlet s:cpo_save

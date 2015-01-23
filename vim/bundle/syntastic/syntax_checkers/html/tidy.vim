@@ -186,7 +186,9 @@ function! s:Args()
 endfunction
 
 function! SyntaxCheckers_html_tidy_GetLocList() dict
-    let makeprg = self.makeprgBuild({ 'args_after': s:Args() })
+    let makeprg = self.makeprgBuild({
+        \ 'args_after': s:Args(),
+        \ 'tail': '2>&1' })
 
     let errorformat =
         \ '%Wline %l column %v - Warning: %m,' .

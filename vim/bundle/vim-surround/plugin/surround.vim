@@ -127,7 +127,7 @@ endfunction
 function! s:wrap(string,char,type,...)
   let keeper = a:string
   let newchar = a:char
-  let s:input = ""
+  let s:tag = ""
   let type = a:type
   let linemode = type ==# 'V' ? 1 : 0
   let special = a:0 ? a:1 : 0
@@ -185,10 +185,10 @@ function! s:wrap(string,char,type,...)
     if dounmapb
       silent! cunmap >
     endif
-    let s:input = tag
+    let s:tag = tag
     if tag != ""
       let tag = substitute(tag,'>*$','','')
-      let s:input = tag . '>'
+      let s:tag = tag . '>'
       let before = '<'.tag.'>'
       if tag =~ '/$'
         let after = ''
@@ -217,7 +217,6 @@ function! s:wrap(string,char,type,...)
   elseif newchar ==# 'f' || newchar ==# 'F'
     let fnc = input('function: ')
     if fnc != ""
-      let s:input = fnc."\<CR>"
       let before = substitute(fnc,'($','','').'('
       let after  = ')'
       if newchar ==# 'F'
@@ -227,7 +226,6 @@ function! s:wrap(string,char,type,...)
     endif
   elseif newchar ==# "\<C-F>"
     let fnc = input('function: ')
-    let s:input = fnc."\<CR>"
     let before = '('.fnc.' '
     let after = ')'
   elseif idx >= 0
@@ -416,7 +414,7 @@ function! s:dosurround(...) " {{{1
     exe 'norm! df'.char
   else
     " One character backwards
-    call search('\m.', 'bW')
+    call search('.','bW')
     exe "norm! da".char
   endif
   let removed = getreg('"')
@@ -456,7 +454,7 @@ function! s:dosurround(...) " {{{1
   if newchar == ""
     silent! call repeat#set("\<Plug>Dsurround".char,scount)
   else
-    silent! call repeat#set("\<Plug>Csurround".char.newchar.s:input,scount)
+    silent! call repeat#set("\<Plug>Csurround".char.newchar.s:tag,scount)
   endif
 endfunction " }}}1
 
@@ -529,9 +527,9 @@ function! s:opfunc(type,...) " {{{1
   let &selection = sel_save
   let &clipboard = cb_save
   if a:type =~ '^\d\+$'
-    silent! call repeat#set("\<Plug>Y".(a:0 && a:1 ? "S" : "s")."surround".char.s:input,a:type)
+    silent! call repeat#set("\<Plug>Y".(a:0 && a:1 ? "S" : "s")."surround".char.s:tag,a:type)
   else
-    silent! call repeat#set("\<Plug>SurroundRepeat".char.s:input)
+    silent! call repeat#set("\<Plug>SurroundRepeat".char.s:tag)
   endif
 endfunction
 

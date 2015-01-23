@@ -2,8 +2,8 @@
 " @Website:     http://www.vim.org/account/profile.php?user_id=4037
 " @License:     GPL (see http://www.gnu.org/licenses/gpl.txt)
 " @Created:     2007-09-17.
-" @Last Change: 2014-06-25.
-" @Revision:    1655
+" @Last Change: 2014-02-05.
+" @Revision:    1615
 
 " call tlog#Log('Load: '. expand('<sfile>')) " vimtlib-sfile
 
@@ -48,14 +48,12 @@ if !exists('g:tcommentOptions')
 endif
 
 if !exists('g:tcomment#options_comments')
-    " Additional args for |tcomment#Comment()| when using the 'comments' 
-    " option.
+    " Options when using a the 'comments' option.
     let g:tcomment#options_comments = {'whitespace': 'both'}   "{{{2
 endif
 
 if !exists('g:tcomment#options_commentstring')
-    " Additional args for |tcomment#Comment()| when using the 
-    " 'commentstring' option.
+    " Options when using a the 'commentstring' option.
     let g:tcomment#options_commentstring = {'whitespace': 'both'}   "{{{2
 endif
 
@@ -254,22 +252,6 @@ if !exists('g:tcomment#ignore_comment_def')
     let g:tcomment#ignore_comment_def = []   "{{{2
 endif
 
-if !exists('g:tcomment#must_escape_expression_backslash')
-    " Users of vim earlier than 7.3 might have to set this variable to 
-    " true. Set this variable to 0, if you see unexpected "\r" char 
-    " sequences in comments.
-    "
-    " The reommended value was `!(v:version > 702 || (v:version == 702 && has('patch407')))`.
-    " It is now assumed though, that no unpatched versions of vim are in 
-    " use.
-    "
-    " References:
-    " Patch 7.2.407  when using :s with an expression backslashes are dropped
-    " https://github.com/tomtom/tcomment_vim/issues/102
-    let g:tcomment#must_escape_expression_backslash = 0   "{{{2
-endif
-
-
 let s:types_dirty = 1
 
 let s:definitions = {}
@@ -348,7 +330,6 @@ call tcomment#DefineType('ada',              '-- %s'            )
 call tcomment#DefineType('apache',           '# %s'             )
 call tcomment#DefineType('asciidoc',         '// %s'            )
 call tcomment#DefineType('asm',              '; %s'             )
-call tcomment#DefineType('asterisk',         '; %s'             )
 call tcomment#DefineType('blade',            '{{-- %s --}}'     )
 call tcomment#DefineType('blade_block',      '{{-- %s --}}'     )
 call tcomment#DefineType('blade_inline',     '{{-- %s --}}'     )
@@ -366,7 +347,6 @@ call tcomment#DefineType('clojurescript_inline', '; %s'         )
 call tcomment#DefineType('cmake',            '# %s'             )
 call tcomment#DefineType('coffee',           '# %s'             )
 call tcomment#DefineType('conf',             '# %s'             )
-call tcomment#DefineType('context',          '%% %s'            )
 call tcomment#DefineType('conkyrc',          '# %s'             )
 call tcomment#DefineType('cpp',              '// %s'            )
 call tcomment#DefineType('cpp_block',        g:tcommentBlockC   )
@@ -391,7 +371,6 @@ call tcomment#DefineType('dsl',              '; %s'             )
 call tcomment#DefineType('dustjs',           '{! %s !}'         )
 call tcomment#DefineType('dylan',            '// %s'            )
 call tcomment#DefineType('eiffel',           '-- %s'            )
-call tcomment#DefineType('elixir',           '# %s'             )
 call tcomment#DefineType('erlang',           '%%%% %s'          )
 call tcomment#DefineType('eruby',            '<%%# %s'          )
 call tcomment#DefineType('esmtprc',          '# %s'             )
@@ -423,7 +402,6 @@ call tcomment#DefineType('htmljinja_block', "{%% comment %%}%s{%% endcomment %%}
 call tcomment#DefineType('hy',               '; %s'             )
 call tcomment#DefineType('ini',              '; %s'             ) " php ini (/etc/php5/...)
 call tcomment#DefineType('io',               '// %s'            )
-call tcomment#DefineType('jade',             '// %s'            )
 call tcomment#DefineType('jasmine',          '# %s'             )
 call tcomment#DefineType('java',             '/* %s */'         )
 call tcomment#DefineType('java_block',       g:tcommentBlockC   )
@@ -449,7 +427,6 @@ call tcomment#DefineType('msidl',            '// %s'            )
 call tcomment#DefineType('msidl_block',      g:tcommentBlockC   )
 call tcomment#DefineType('nginx',            '# %s'             )
 call tcomment#DefineType('nroff',            '.\\" %s'          )
-call tcomment#DefineType('noweb',            '%% %s'            )
 call tcomment#DefineType('nsis',             '# %s'             )
 call tcomment#DefineType('objc',             '/* %s */'         )
 call tcomment#DefineType('objc_block',       g:tcommentBlockC   )
@@ -617,8 +594,6 @@ let s:null_comment_string    = '%s'
 "   R ... right (comment the line right of the cursor)
 "   v ... visual
 "   o ... operator
-"   C ... force comment
-"   U ... force uncomment (if U and C are present, U wins)
 " By default, each line in range will be commented by adding the comment 
 " prefix and postfix.
 function! tcomment#Comment(beg, end, ...)
@@ -660,11 +635,9 @@ function! tcomment#Comment(beg, end, ...)
         endif
         " TLogVAR comment_mode
     endif
-    let mode_extra = s:GetTempOption('mode_extra', '')
-    " TLogVAR mode_extra
-    if !empty(mode_extra)
-        let comment_mode = s:AddModeExtra(comment_mode, mode_extra, lbeg, lend)
-        " TLogVAR "mode_extra", comment_mode
+    if exists('s:temp_options') && has_key(s:temp_options, 'mode_extra')
+        let comment_mode = s:AddModeExtra(comment_mode, s:temp_options.mode_extra, lbeg, lend)
+        " TLogVAR comment_mode
         unlet s:temp_options.mode_extra
     endif
     " get the correct commentstring
@@ -740,12 +713,9 @@ function! tcomment#Comment(beg, end, ...)
     " echom "DBG" string(s:cdef)
     let cbeg = get(s:cdef, 'col', cbeg)
     " TLogVAR cbeg
-    if mode_extra =~# 'U'
-        let uncomment = 1
-    elseif mode_extra =~# 'C' || comment_anyway
+    if comment_anyway
         let uncomment = 0
     endif
-    " TLogVAR comment_anyway, mode_extra, uncomment
     " go
     " TLogVAR comment_mode
     if comment_mode =~# 'B'
@@ -834,15 +804,6 @@ else
         return strlen(substitute(a:string, ".", "x", "g"))
     endf
 endif
-
-
-function! s:GetTempOption(name, default) "{{{3
-    if exists('s:temp_options') && has_key(s:temp_options, a:name)
-        return s:temp_options[a:name]
-    else
-        return a:default
-    endif
-endf
 
 
 function! tcomment#SetOption(name, arg) "{{{3
@@ -1439,10 +1400,10 @@ function! s:ProcessLine(uncomment, match, checkRx, replace)
             endif
         endif
         " TLogVAR rv
-        if g:tcomment#must_escape_expression_backslash
-            let rv = escape(rv, "\\r")
-        else
+        if v:version > 702 || (v:version == 702 && has('patch407'))
             let rv = escape(rv, "\r")
+        else
+            let rv = escape(rv, "\\r")
         endif
         " TLogVAR rv
         " let rv = substitute(rv, '\n', '\\\n', 'g')

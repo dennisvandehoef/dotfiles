@@ -19,7 +19,9 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 function! SyntaxCheckers_python_frosted_GetLocList() dict
-    let makeprg = self.makeprgBuild({ 'args_after': '-vb' })
+    let makeprg = self.makeprgBuild({
+        \ 'exe_before': (syntastic#util#isRunningWindows() ? '' : 'TERM=dumb'),
+        \ 'args_after': '-vb' })
 
     let errorformat =
         \ '%f:%l:%c:%m,' .
@@ -27,12 +29,9 @@ function! SyntaxCheckers_python_frosted_GetLocList() dict
         \ '%-Z%p^,' .
         \ '%-G%.%#'
 
-    let env = syntastic#util#isRunningWindows() ? {} : { 'TERM': 'dumb' }
-
     let loclist = SyntasticMake({
         \ 'makeprg': makeprg,
         \ 'errorformat': errorformat,
-        \ 'env': env,
         \ 'returns': [0, 1] })
 
     for e in loclist

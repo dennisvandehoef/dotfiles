@@ -8,7 +8,6 @@ function! ack#Ack(cmd, args)
   else
     let l:grepargs = a:args . join(a:000, ' ')
   end
-  echom l:grepargs
   let l:ackprg_run = g:ackprg
 
   " Format, used to manage column jump
@@ -27,8 +26,8 @@ function! ack#Ack(cmd, args)
   try
     " NOTE: we escape special chars, but not everything using shellescape to
     "       allow for passing arguments etc
-    if g:ack_use_dispatch
-      let &l:errorformat = g:ackformat
+    if exists(":Dispatch")
+      setlocal errorformat=%f:%l:%c:%m
       let &l:makeprg=g:ackprg." " . escape(l:grepargs, '|#%')
       Make
     else
@@ -50,12 +49,9 @@ function! ack#Ack(cmd, args)
     let s:close_cmd = ':cclose<CR>'
   endif
 
-  if !g:ack_use_dispatch
+  if !exists(":Dispatch")
     call ack#show_results()
-  else
-    copen
   endif
-  call <SID>apply_maps()
   call <SID>highlight(l:grepargs)
 
   redraw!
@@ -63,6 +59,7 @@ endfunction
 
 function! ack#show_results()
   execute s:handler
+  call <SID>apply_maps()
 endfunction
 
 function! s:apply_maps()
@@ -112,8 +109,9 @@ function! s:highlight(args)
     return
   endif
 
-  let @/ = matchstr(a:args, "\\v(-)\@<!(\<)\@<=\\w+|['\"]\\zs.{-}\\ze['\"]")
-  call feedkeys(":let &l:hlsearch=1 \| echo \<CR>", "n")
+  let @/ = matchstr(a:args, "\\v\\w+\>|['\"]\\zs[^\"]+\\ze['\"]")
+  setlocal hlsearch
+  call feedkeys(":let v:hlsearch=1 \| echo \<CR>", "n")
 endfunction
 
 function! ack#AckFromSearch(cmd, args)

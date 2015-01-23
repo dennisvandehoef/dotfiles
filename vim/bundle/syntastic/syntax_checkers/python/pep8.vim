@@ -21,16 +21,14 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 function! SyntaxCheckers_python_pep8_GetLocList() dict
-    let makeprg = self.makeprgBuild({})
+    let makeprg = self.makeprgBuild({
+        \ 'exe_before': (syntastic#util#isRunningWindows() ? '' : 'TERM=dumb') })
 
     let errorformat = '%f:%l:%c: %m'
-
-    let env = syntastic#util#isRunningWindows() ? {} : { 'TERM': 'dumb' }
 
     let loclist = SyntasticMake({
         \ 'makeprg': makeprg,
         \ 'errorformat': errorformat,
-        \ 'env': env,
         \ 'subtype': 'Style' })
 
     for e in loclist
