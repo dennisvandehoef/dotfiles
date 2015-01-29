@@ -33,3 +33,5 @@ cp -r ~/.bash_aliases ~/.bash_aliases.old 2>/dev/null
 rm -f ~/.bash_aliases 2>/dev/null
 
 ln -s ~/dotfiles/aliases ~/.bash_aliases
+#mac @ work
+echo '[[ -s "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"' >> ~/.bash_profile
