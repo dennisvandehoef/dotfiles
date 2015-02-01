@@ -16,3 +16,5 @@ alias kp="cd ~/code/kaeuferportal"
 alias spec="rake test:prepare && rake db:migrate RAILS_ENV=test && rspec spec"
 alias rbp="bundle exec rails_best_practices"
 alias rubocop="bundle exec rubocop"
+
+alias refork="git fetch upstream && git checkout master && git merge upstream/master"
