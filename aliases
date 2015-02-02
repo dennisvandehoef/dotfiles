@@ -11,7 +11,7 @@ alias gps="git push"
 alias gst="git st"
 alias gplmaster="git fetch origin && git rebase origin/master"
 
-alias kp="cd ~/code/kaeuferportal"
+alias kp="cd ~/code/kp"
 
 alias spec="rake test:prepare && rake db:migrate RAILS_ENV=test && rspec spec"
 alias rbp="bundle exec rails_best_practices"
