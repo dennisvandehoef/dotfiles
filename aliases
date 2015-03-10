@@ -13,7 +13,6 @@ alias gplmaster="git fetch origin && git rebase origin/master"
 
 alias kp="cd ~/code/kp"
 
-alias spec="rake db:migrate RAILS_ENV=test && rspec spec"
 alias rbp="bundle exec rails_best_practices"
 alias rubocop="bundle exec rubocop"
 
