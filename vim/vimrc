@@ -34,7 +34,7 @@ set showmode
 set showcmd
 set hidden
 set go-=T
-color ingretu
+colorscheme molokai
 set mousehide
 
 " check to make sure vim has been compiled with colorcolumn support
