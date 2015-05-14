@@ -37,6 +37,8 @@ set go-=T
 colorscheme molokai
 set mousehide
 
+set mouse=a
+
 " check to make sure vim has been compiled with colorcolumn support
 " before enabling it
 if exists("+colorcolumn")
