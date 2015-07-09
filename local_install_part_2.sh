@@ -38,3 +38,10 @@ rm -f ~/.bash_aliases 2>/dev/null
 ln -s ~/dotfiles/aliases ~/.bash_aliases
 #mac @ work
 echo '[[ -s "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"' >> ~/.bash_profile
+
+echo -e "\n\n\n\n\nConfig Gem\n\n\n\n\n"
+cp -r ~/.gemrc ~/.gemrc.old 2>/dev/null
+
+rm -f ~/.gemrc 2>/dev/null
+
+ln -s ~/dotfiles/gemrc ~/.gemrc
