@@ -1,19 +1,24 @@
+alias .='cd . && ls -al'
 alias ..="cd .."
 alias ...="cd ../.."
 
-alias be="bundle exec"
+# command defaults
+alias ls='ls -al'
 
+# path shortcuts
 alias code="cd ~/code"
+alias dotfiles="cd ~/dotfiles"
 
+# Ruby etc.
+alias be="bundle exec"
+alias migrate="be rake db:migrate && RAILS_ENV=test be rake db:migrate"
+alias rbp="bundle exec rails_best_practices"
+alias rubocop="bundle exec rubocop"
+
+# git
 alias g="git"
 alias gpl="git pl"
 alias gps="git push"
 alias gst="git st"
 alias gplmaster="git fetch origin && git rebase origin/master"
-
-alias kp="cd ~/code/kp"
-
-alias rbp="bundle exec rails_best_practices"
-alias rubocop="bundle exec rubocop"
-
 alias refork="git fetch upstream && git checkout master && git rebase upstream/master && git push"
