@@ -34,7 +34,7 @@ set showmode
 set showcmd
 set hidden
 set go-=T
-colorscheme molokai
+colorscheme behelit
 set mousehide
 
 set mouse=a
