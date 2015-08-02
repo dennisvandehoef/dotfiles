@@ -2,20 +2,16 @@ alias .='cd . && ls -al'
 alias ..="cd .."
 alias ...="cd ../.."
 
-# command defaults
 alias ls='ls -al'
 
-# path shortcuts
 alias code="cd ~/code"
 alias dotfiles="cd ~/dotfiles"
 
-# Ruby etc.
 alias be="bundle exec"
 alias migrate="be rake db:migrate && RAILS_ENV=test be rake db:migrate"
 alias rbp="bundle exec rails_best_practices"
 alias rubocop="bundle exec rubocop"
 
-# git
 alias g="git"
 alias gpl="git pl"
 alias gps="git push"
