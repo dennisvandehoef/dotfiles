@@ -34,7 +34,7 @@ set showmode
 set showcmd
 set hidden
 set go-=T
-colorscheme behelit
+colorscheme ir_black
 set mousehide
 
 set mouse=a
