@@ -78,8 +78,7 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-:nnoremap <C-n> :bnext<CR>
-:nnoremap <C-b> :bprevious<CR>
+:nnoremap <C-a> :bnext<CR>
 
 nmap <C-d> :Explore<CR>
 
