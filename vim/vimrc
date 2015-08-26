@@ -81,12 +81,11 @@ nnoremap <Down> :echoe "Use j"<CR>
 :nnoremap <C-n> :bnext<CR>
 :nnoremap <C-b> :bprevious<CR>
 
+nmap <C-d> :Explore<CR>
+
 "  ---------------------------------------------------------------------------
 "  Plugins
 "  ---------------------------------------------------------------------------
-
-" NERDTree
-nmap <C-d> :NERDTree<CR>
 
 " eradicate all trailing whitespace all the time
 let g:DeleteTrailingWhitespace = 1
