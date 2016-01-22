@@ -9,7 +9,7 @@ alias dotfiles="cd ~/dotfiles"
 
 alias be="bundle exec"
 alias migrate="be rake db:migrate && RAILS_ENV=test be rake db:migrate"
-alias rbp="bundle exec rails_best_practices"
+alias rbp="bundle exec rails_best_practices -e 'db/migrate'"
 alias rubocop="bundle exec rubocop"
 
 alias g="git"
