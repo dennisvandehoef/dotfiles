@@ -42,6 +42,11 @@ cp -r ~/.inputrc ~/.inputrc.old 2>/dev/null
 rm -f ~/.inputrc 2>/dev/null
 ln -s ~/dotfiles/inputrc ~/.inputrc
 
+echo -e "\n\n\n\n\nConfig ATOM\n\n\n\n\n"
+cp -r ~/.atom ~/.atom.old 2>/dev/null
+rm -f ~/.atom 2>/dev/null
+ln -s ~/dotfiles/atom ~/.atom
+
 #mac @ work
 echo '[[ -s "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"' >> ~/.bash_profile
 

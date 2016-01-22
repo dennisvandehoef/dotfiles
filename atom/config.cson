@@ -1,0 +1,30 @@
+"*":
+  core:
+    disabledPackages: [
+      "bookmarks"
+      "language-csharp"
+      "language-c"
+      "language-clojure"
+      "language-java"
+      "language-less"
+      "language-make"
+      "language-objective-c"
+      "language-perl"
+      "language-php"
+      "language-python"
+      "language-toml"
+    ]
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax-dark"
+    ]
+  editor:
+    invisibles: {}
+    preferredLineLength: 79
+    showInvisibles: true
+  "exception-reporting":
+    userId: "75e15a7c-e9b6-4918-389c-0f24690b28e4"
+  "fuzzy-finder": {}
+  "spell-check": {}
+  welcome:
+    showOnStartup: false
