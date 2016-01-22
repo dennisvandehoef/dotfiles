@@ -38,7 +38,7 @@ cp -r ~/.bashrc ~/.bashrc.old 2>/dev/null
 rm -f ~/.bashrc 2>/dev/null
 ln -s ~/dotfiles/bashrc ~/.bashrc
 
-cp -r ~/.inputrc ~/.inputrc 2>/dev/null
+cp -r ~/.inputrc ~/.inputrc.old 2>/dev/null
 rm -f ~/.inputrc 2>/dev/null
 ln -s ~/dotfiles/inputrc ~/.inputrc
 
