@@ -13,6 +13,8 @@
       "language-php"
       "language-python"
       "language-toml"
+      "package-generator"
+      "welcome"
     ]
     themes: [
       "atom-material-ui"
