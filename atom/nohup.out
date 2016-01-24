@@ -1,0 +1,74 @@
+auto-updater is not implemented on this platform
+Error: auto-updater is not implemented on this platform
+    at Object.<anonymous> (/usr/share/atom/resources/atom.asar/browser/api/lib/auto-updater.js:11:13)
+    at Object.<anonymous> (/usr/share/atom/resources/atom.asar/browser/api/lib/auto-updater.js:14:4)
+    at Module._compile (module.js:434:26)
+    at Object.defineProperty.value [as .js] (/usr/share/atom/resources/app.asar/src/compile-cache.js:208:21)
+    at Module.load (module.js:355:32)
+    at Function.Module._load (module.js:310:12)
+    at Module.require (module.js:365:17)
+    at require (module.js:384:17)
+    at AutoUpdateManager.module.exports.AutoUpdateManager.setupAutoUpdater (/usr/share/atom/resources/app.asar/src/browser/auto-update-manager.js:51:23)
+    at /usr/share/atom/resources/app.asar/src/browser/auto-update-manager.js:42:24
+    at doNTCallback0 (node.js:419:9)
+    at process._tickCallback (node.js:348:13)
+    at NavigationController.loadUrl (/usr/share/atom/resources/atom.asar/browser/api/lib/navigation-controller.js:59:24)
+    at EventEmitter.webContents.(anonymous function) [as loadUrl] (/usr/share/atom/resources/atom.asar/browser/api/lib/web-contents.js:81:27)
+    at BrowserWindow.loadUrl (/usr/share/atom/resources/atom.asar/browser/api/lib/browser-window.js:121:37)
+    at AtomWindow.module.exports.AtomWindow.setLoadSettings (/usr/share/atom/resources/app.asar/src/browser/atom-window.js:124:33)
+    at new AtomWindow (/usr/share/atom/resources/app.asar/src/browser/atom-window.js:110:12)
+    at AtomApplication.module.exports.AtomApplication.openPaths (/usr/share/atom/resources/app.asar/src/browser/atom-application.js:686:24)
+    at AtomApplication.module.exports.AtomApplication.openWithOptions (/usr/share/atom/resources/app.asar/src/browser/atom-application.js:132:21)
+    at new AtomApplication (/usr/share/atom/resources/app.asar/src/browser/atom-application.js:112:14)
+    at createAtomApplication (/usr/share/atom/resources/app.asar/src/browser/atom-application.js:60:16)
+    at Function.module.exports.AtomApplication.open (/usr/share/atom/resources/app.asar/src/browser/atom-application.js:63:9)
+    at EventEmitter.<anonymous> (/usr/share/atom/resources/app.asar/src/browser/main.js:55:23)
+    at emitOne (events.js:82:20)
+    at EventEmitter.emit (events.js:169:7)
+App load time: 2133ms
+[6596:6596:0122/220540:ERROR:sandbox_linux.cc(338)] InitializeSandbox() called with multiple threads in process gpu-process
+[WARNING:flash/platform/pepper/pep_module.cpp(63)] SANDBOXED
+Created new window in existing browser session.
+[6439:6476:0124/125837:ERROR:channel.cc(307)] RawChannel read error (connection broken)
+[6439:6439:0124/131111:ERROR:desktop_window_tree_host_x11.cc(882)] Not implemented reached in virtual void views::DesktopWindowTreeHostX11::InitModalType(ui::ModalType)
+[6439:6476:0124/131117:ERROR:channel.cc(307)] RawChannel read error (connection broken)
+[6439:6476:0124/131453:ERROR:channel.cc(307)] RawChannel read error (connection broken)
+[6439:6476:0124/131827:ERROR:channel.cc(307)] RawChannel read error (connection broken)
+[6439:6476:0124/131841:ERROR:channel.cc(307)] RawChannel read error (connection broken)
+Vector smash protection is enabled.
+[WARNING:flash/platform/pepper/pep_module.cpp(63)] SANDBOXED
+Vector smash protection is enabled.
+[6439:6476:0124/132551:ERROR:channel.cc(307)] RawChannel read error (connection broken)
+[WARNING:flash/platform/pepper/pep_module.cpp(63)] SANDBOXED
+[6439:6476:0124/132643:ERROR:channel.cc(307)] RawChannel read error (connection broken)
+Vector smash protection is enabled.
+[6439:6476:0124/133257:ERROR:channel.cc(307)] RawChannel read error (connection broken)
+[6439:6476:0124/133313:ERROR:channel.cc(307)] RawChannel read error (connection broken)
+Fontconfig error: Cannot load default config file
+Fontconfig error: Cannot load default config file
+Fontconfig error: Cannot load default config file
+Fontconfig error: Cannot load default config file
+Fontconfig error: Cannot load default config file
+Fontconfig error: Cannot load default config file
+Fontconfig error: Cannot load default config file
+[6439:6476:0124/134220:ERROR:channel.cc(307)] RawChannel read error (connection broken)
+Fontconfig error: Cannot load default config file
+Fontconfig error: Cannot load default config file
+Fontconfig error: Cannot load default config file
+[WARNING:flash/platform/pepper/pep_module.cpp(63)] SANDBOXED
+[6596:6596:0124/134711:ERROR:gles2_cmd_decoder.cc(13477)] [.Compositor-0xa3a5a911dc0]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+[6596:6596:0124/134711:ERROR:gles2_cmd_decoder.cc(13477)] [.Compositor-0xa3a5a911dc0]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+[6596:6596:0124/134711:ERROR:gles2_cmd_decoder.cc(13477)] [.Compositor-0xa3a5a911dc0]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+[6596:6596:0124/134711:ERROR:gles2_cmd_decoder.cc(6972)] [.Compositor-0xa3a5a911dc0]RENDER WARNING: texture bound to texture unit 1 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+[6596:6596:0124/134711:ERROR:gles2_cmd_decoder.cc(6972)] [.Compositor-0xa3a5a911dc0]RENDER WARNING: texture bound to texture unit 2 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+[6596:6596:0124/134711:ERROR:gles2_cmd_decoder.cc(6972)] [.Compositor-0xa3a5a911dc0]RENDER WARNING: texture bound to texture unit 3 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+Vector smash protection is enabled.
+[WARNING:flash/platform/pepper/pep_module.cpp(63)] SANDBOXED
+Vector smash protection is enabled.
+[WARNING:flash/platform/pepper/pep_module.cpp(63)] SANDBOXED
+[6439:6476:0124/201547:ERROR:channel.cc(307)] RawChannel read error (connection broken)
+Vector smash protection is enabled.
+[WARNING:flash/platform/pepper/pep_module.cpp(63)] SANDBOXED
+[6439:6476:0124/202426:ERROR:channel.cc(307)] RawChannel read error (connection broken)
+Vector smash protection is enabled.
+[6439:6476:0124/205354:ERROR:channel.cc(307)] RawChannel read error (connection broken)

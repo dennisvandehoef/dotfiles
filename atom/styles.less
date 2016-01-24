@@ -12,12 +12,18 @@
 
 // To style other content in the text editor's shadow DOM, use the ::shadow expression
 atom-text-editor::shadow .cursor {
-  border-color: #f00;
-  border-width: 1px;
+  border-left: 1px solid #ffff00;
 }
 
 //Bar 79 chars
 atom-text-editor::shadow .wrap-guide {
   width: 1px;
   background-color: #233;
+}
+
+//Bar cursor
+atom-text-editor.is-focused::shadow {
+  ruler-view.rulerz {
+    border-left: 1px solid #233;
+  }
 }
