@@ -25,4 +25,4 @@ Error: auto-updater is not implemented on this platform
     at EventEmitter.<anonymous> (/usr/share/atom/resources/app.asar/src/browser/main.js:55:23)
     at emitOne (events.js:82:20)
     at EventEmitter.emit (events.js:169:7)
-App load time: 5617ms
+App load time: 5124ms
