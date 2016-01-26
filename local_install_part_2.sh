@@ -43,9 +43,29 @@ rm -f ~/.inputrc 2>/dev/null
 ln -s ~/dotfiles/inputrc ~/.inputrc
 
 echo -e "\n\n\n\n\nConfig ATOM\n\n\n\n\n"
-cp -r ~/.atom ~/.atom.old 2>/dev/null
-rm -f ~/.atom 2>/dev/null
-ln -s ~/dotfiles/atom ~/.atom
+cp -r ~/.atom/config.cson ~/.atom/config.cson.old 2>/dev/null
+rm -f ~/.atom/config.cson 2>/dev/null
+ln -s ~/dotfiles/atom/config.cson ~/.atom/config.cson
+
+cp -r ~/.atom/keymap.cson ~/.atom/keymap.cson.old 2>/dev/null
+rm -f ~/.atom/keymap.cson 2>/dev/null
+ln -s ~/dotfiles/atom/keymap.cson ~/.atom/keymap.cson
+
+cp -r ~/.atom/snippets.cson ~/.atom/snippets.cson.old 2>/dev/null
+rm -f ~/.atom/snippets.cson 2>/dev/null
+ln -s ~/dotfiles/atom/snippets.cson ~/.atom/snippets.cson
+
+cp -r ~/.atom/styles.less ~/.atom/styles.less.old 2>/dev/null
+rm -f ~/.atom/styles.less 2>/dev/null
+ln -s ~/dotfiles/atom/styles.less ~/.atom/styles.less
+
+cp -r ~/.atom/packages ~/.atom/packages.old 2>/dev/null
+rm -f ~/.atom/packages 2>/dev/null
+ln -s ~/dotfiles/atom/packages ~/.atom/packages
+
+cp -r ~/.atom/init.coffee ~/.atom/init.coffee.old 2>/dev/null
+rm -f ~/.atom/init.coffee 2>/dev/null
+ln -s ~/dotfiles/atom/init.coffee ~/.atom/init.coffee
 
 #mac @ work
 echo '[[ -s "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"' >> ~/.bash_profile
