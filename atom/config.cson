@@ -42,3 +42,9 @@
     usePreviewTabs: true
   welcome:
     showOnStartup: false
+".haml.text":
+  editor:
+    preferredLineLength: 79
+".hamlc.text":
+  editor:
+    preferredLineLength: 79
