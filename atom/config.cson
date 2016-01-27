@@ -15,6 +15,14 @@
       "package-generator"
       "welcome"
     ]
+    ignoredNames: [
+      "coverage/**"
+      "tmp/**"
+      "rdoc/**"
+      "public/cached-assets/**"
+      "doc/**"
+      "public/uploads/**"
+    ]
     themes: [
       "atom-material-ui"
       "atom-material-syntax-dark"
@@ -27,5 +35,9 @@
     userId: "75e15a7c-e9b6-4918-389c-0f24690b28e4"
   "fuzzy-finder": {}
   "spell-check": {}
+  tabs:
+    enableVcsColoring: true
+    tabScrolling: true
+    usePreviewTabs: true
   welcome:
     showOnStartup: false
