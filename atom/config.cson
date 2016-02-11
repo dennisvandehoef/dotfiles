@@ -1,4 +1,13 @@
 "*":
+  "atom-material-ui":
+    panels:
+      depth: true
+      panelContrast: true
+    tabs:
+      showTabIcons: "Show on active tab"
+    treeView:
+      compactTreeView: true
+    ui: {}
   core:
     disabledPackages: [
       "bookmarks"
@@ -34,6 +43,7 @@
   "exception-reporting":
     userId: "75e15a7c-e9b6-4918-389c-0f24690b28e4"
   "fuzzy-finder": {}
+  "go-plus": {}
   pigments: {}
   "spell-check": {}
   tabs:

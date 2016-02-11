@@ -44,14 +44,10 @@ class ColorMarkerElement extends HTMLElement
     @subscriptions.add @subscribeTo this,
       click: (e) =>
         colorBuffer = @colorMarker.colorBuffer
-        editor = colorBuffer.editor
 
-        return unless colorBuffer? and editor?
+        return unless colorBuffer?
 
-        editor.setSelectedBufferRange(@colorMarker.marker.getBufferRange())
-
-        if colorBuffer.project.colorPickerAPI?
-          colorBuffer.project.colorPickerAPI.open(editor, editor.getLastCursor())
+        colorBuffer.selectColorMarkerAndOpenPicker(@colorMarker)
 
     @render()
 

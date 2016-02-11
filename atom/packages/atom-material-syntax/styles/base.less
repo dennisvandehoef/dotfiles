@@ -47,6 +47,17 @@ atom-text-editor.is-focused .cursor,
 atom-text-editor.is-focused .selection .region,
 :host(.is-focused) .selection .region {
     background-color: @syntax-selection-color;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        border: 2px solid @syntax-selection-color;
+        border-radius: 3px;
+    }
 }
 atom-text-editor.is-focused .line-number.cursor-line-no-selection,
 atom-text-editor.is-focused .line.cursor-line,
@@ -88,7 +99,6 @@ atom-text-editor.is-focused .line.cursor-line,
 .entity.name.function,
 .meta.require,
 .support.function.any-method,
-.meta.function-call,
 .support.function,
 .keyword.other.special-method,
 .meta.block-level {
@@ -138,7 +148,7 @@ atom-text-editor.is-focused .line.cursor-line,
     color: mix(lighten(desaturate(@md-pink, 12%), 15%), @md-red);
 }
 .entity.other.attribute-name {
-    color: #c3e88d;
+    color: #FFC55C;
 
     &.class.css {
         color: #FFC55C;
