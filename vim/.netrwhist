@@ -1,3 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/Users/dennisvandehoef/code/kp/cms'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/dennisvandehoef/code/kp/cms/app/assets/javascripts'
+let g:netrw_dirhist_2='/Users/dennisvandehoef/code/kp/cms/app/cells/model_kit/stylesheets'
+let g:netrw_dirhist_3='/Users/dennisvandehoef/code/kp/cms/app/cells/model_kit'
+let g:netrw_dirhist_4='/Users/dennisvandehoef/code/kp/cms/app/cells/model_kit/javascripts'
