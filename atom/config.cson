@@ -33,8 +33,8 @@
       "gl-light-syntax"
     ]
   editor:
-    fontFamily: "OpenDyslexic"
-    fontSize: 16
+    fontFamily: "OpenDyslexicMono"
+    fontSize: 15
     invisibles: {}
     preferredLineLength: 79
     showInvisibles: true
