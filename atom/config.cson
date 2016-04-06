@@ -1,12 +1,7 @@
 "*":
   "atom-material-ui":
-    panels:
-      depth: true
-      panelContrast: true
-    tabs:
-      showTabIcons: "Show on active tab"
-    treeView:
-      compactTreeView: true
+    tabs: {}
+    treeView: {}
     ui: {}
   core:
     disabledPackages: [
@@ -23,6 +18,7 @@
       "language-toml"
       "package-generator"
       "welcome"
+      "go-plus"
     ]
     ignoredNames: [
       "coverage/**"
@@ -33,10 +29,12 @@
       "public/uploads/**"
     ]
     themes: [
-      "atom-material-ui"
-      "atom-material-syntax-dark"
+      "atom-light-ui"
+      "gl-light-syntax"
     ]
   editor:
+    fontFamily: "OpenDyslexic"
+    fontSize: 16
     invisibles: {}
     preferredLineLength: 79
     showInvisibles: true

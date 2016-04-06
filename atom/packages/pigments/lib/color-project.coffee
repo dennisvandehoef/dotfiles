@@ -143,6 +143,15 @@ class ColorProject
     @subscriptions.add atom.config.observe 'pigments.ignoreVcsIgnoredPaths', =>
       @loadPathsAndVariables()
 
+    svgColorExpression = @colorExpressionsRegistry.getExpression('pigments:named_colors')
+    defaultScopes = svgColorExpression.scopes.slice()
+    @subscriptions.add atom.config.observe 'pigments.extendedFiletypesForColorWords', (scopes) =>
+      svgColorExpression.scopes = defaultScopes.concat(scopes)
+      @colorExpressionsRegistry.emitter.emit 'did-update-expressions', {
+        name: svgColorExpression.name
+        registry: @colorExpressionsRegistry
+      }
+
     @subscriptions.add @colorExpressionsRegistry.onDidUpdateExpressions ({name}) =>
       return if not @paths? or name is 'pigments:variables'
       @variables.evaluateVariables(@variables.getVariables())
@@ -551,7 +560,8 @@ class ColorProject
       if /\/\*$/.test(p) then p + '*' else p
 
   setIgnoredNames: (@ignoredNames=[]) ->
-    return if not @initialized? and not @initializePromise?
+    if not @initialized? and not @initializePromise?
+      return Promise.reject('Project is not initialized yet')
 
     @initialize().then =>
       dirtied = @paths.filter (p) => @isIgnoredPath(p)
