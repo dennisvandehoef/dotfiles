@@ -9,7 +9,7 @@ alias dotfiles="cd ~/dotfiles"
 
 alias be="bundle exec"
 alias rbp="bundle exec rails_best_practices -e 'db/migrate'"
-alias migrate="be rake db:migrate && RAILS_ENV=test be rake db:drop db:create && RAILS_ENV=test be rake db:migrate && RAILS_ENV=test annotate -f rdoc --force"
+alias migrate="be rake db:migrate && RAILS_ENV=test be rake db:drop db:create && RAILS_ENV=test wrapper_open="rubocop:disable Metrics/LineLength" wrapper_close="rubocop:enable Metrics/LineLength" bundle exec annotate -is --sort -f rdoc --force"
 alias rubocop="bundle exec rubocop"
 
 alias g="git"
