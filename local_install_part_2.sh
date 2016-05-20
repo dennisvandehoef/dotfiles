@@ -1,6 +1,14 @@
 rvm rvmrc warning ignore all.rvmrcs
 rvm rvmrc warning ignore allGemfiles
 
+echo -e "\n\n\n\n\nConfig Gem\n\n\n\n\n"
+cp -r ~/.gemrc ~/.gemrc.old 2>/dev/null
+rm -f ~/.gemrc 2>/dev/null
+ln -s ~/dotfiles/gemrc ~/.gemrc
+
+sudo gem install bundler
+sudo gem install rails
+
 echo -e "\n\n\n\n\nCreating git reposetory\n\n\n\n\n"
 mkdir ~/dotfiles
 mkdir ~/code
@@ -69,8 +77,3 @@ ln -s ~/dotfiles/atom/init.coffee ~/.atom/init.coffee
 
 #mac @ work
 echo '[[ -s "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"' >> ~/.bash_profile
-
-echo -e "\n\n\n\n\nConfig Gem\n\n\n\n\n"
-cp -r ~/.gemrc ~/.gemrc.old 2>/dev/null
-rm -f ~/.gemrc 2>/dev/null
-ln -s ~/dotfiles/gemrc ~/.gemrc
