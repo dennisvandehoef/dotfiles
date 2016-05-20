@@ -10,14 +10,12 @@ sudo apt-get install -y unrar
 sudo apt-get install -y vim-gnome
 sudo apt-get install -y nodejs
 sudo apt-get install -y libmysqlclient-dev
-sudo apt-get install -y ImageMagick
-sudo apt-get install -y libmagickwand-dev
-sudo apt-get install -y git-cola
 
 echo -e "\n\n\n\n\nInstalling Ruby\n\n\n\n\n"
 \curl -sSL https://get.rvm.io | bash -s stable --rails
 source ~/.rvm/scripts/rvm
 
+sudo gem install bundler
 sudo gem install rails
 
 echo -e "\n\n\n\n\nCleanup\n\n\n\n\n"
