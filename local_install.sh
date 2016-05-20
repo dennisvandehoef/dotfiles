@@ -15,9 +15,6 @@ echo -e "\n\n\n\n\nInstalling Ruby\n\n\n\n\n"
 \curl -sSL https://get.rvm.io | bash -s stable --rails
 source ~/.rvm/scripts/rvm
 
-sudo gem install bundler
-sudo gem install rails
-
 echo -e "\n\n\n\n\nCleanup\n\n\n\n\n"
 sudo apt-get autoremove
 sudo apt-get clean
