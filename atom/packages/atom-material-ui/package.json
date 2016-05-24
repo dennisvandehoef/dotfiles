@@ -1,7 +1,7 @@
 {
   "name": "atom-material-ui",
   "theme": "ui",
-  "version": "1.2.10",
+  "version": "1.2.11",
   "description": "A dark UI theme for Atom that follows Google's Material Design Guidelines",
   "main": "./lib/main",
   "keywords": [
@@ -32,10 +32,10 @@
     "url": "https://github.com/silvestreh/atom-material-ui/issues"
   },
   "homepage": "https://github.com/silvestreh/atom-material-ui#readme",
-  "_id": "atom-material-ui@1.2.10",
-  "_shasum": "a797ffeb1dc0d8ee596c6d82914e4357aba8be3b",
-  "_resolved": "file:../d-11636-45119-1udjlev/package.tgz",
-  "_from": "../d-11636-45119-1udjlev/package.tgz",
+  "_id": "atom-material-ui@1.2.11",
+  "_shasum": "b37a1ca3170b06c7c74217a91554bd71cf512fb5",
+  "_resolved": "file:../d-116419-76633-u6rwxe/package.tgz",
+  "_from": "../d-116419-76633-u6rwxe/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
