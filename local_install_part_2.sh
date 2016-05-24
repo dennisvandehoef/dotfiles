@@ -51,6 +51,8 @@ rm -f ~/.inputrc 2>/dev/null
 ln -s ~/dotfiles/inputrc ~/.inputrc
 
 echo -e "\n\n\n\n\nConfig ATOM\n\n\n\n\n"
+mkdir ~/.atom
+
 cp -r ~/.atom/config.cson ~/.atom/config.cson.old 2>/dev/null
 rm -f ~/.atom/config.cson 2>/dev/null
 ln -s ~/dotfiles/atom/config.cson ~/.atom/config.cson
