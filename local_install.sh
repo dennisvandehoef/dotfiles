@@ -106,8 +106,5 @@ ln -s ~/dotfiles/atom/init.coffee ~/.atom/init.coffee
 #mac @ work
 echo '[[ -s "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"' >> ~/.bash_profile
 
-
 echo -e "\n\n\n\n\nFirst step is done\n\n\n\n\n"
 echo -e "TODO:\n\nCreate SSH key end add on github.com\nManual: https://help.github.com/articles/generating-ssh-keys/"
-echo -e "\n\nthen run the command:"
-echo -e "curl https://raw.githubusercontent.com/dennisvandehoef/dotfiles/master/local_install_part_2.sh -o - | sh"
