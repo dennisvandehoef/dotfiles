@@ -44,6 +44,12 @@
   "go-plus": {}
   pigments: {}
   "spell-check": {}
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
   tabs:
     enableVcsColoring: true
     tabScrolling: true
