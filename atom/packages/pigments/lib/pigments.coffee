@@ -79,7 +79,19 @@ module.exports =
     markerType:
       type: 'string'
       default: 'background'
-      enum: ['background', 'outline', 'underline', 'dot', 'square-dot', 'gutter']
+      enum: [
+        'native-background'
+        'native-underline'
+        'native-outline'
+        'native-dot'
+        'native-square-dot'
+        'background'
+        'outline'
+        'underline'
+        'dot'
+        'square-dot'
+        'gutter'
+      ]
     sortPaletteColors:
       type: 'string'
       default: 'none'
@@ -101,6 +113,8 @@ module.exports =
       title: 'Ignore VCS Ignored Paths'
 
   activate: (state) ->
+    @patchAtom()
+
     @project = if state.project?
       atom.deserializers.deserialize(state.project)
     else
@@ -114,7 +128,7 @@ module.exports =
       'pigments:report': => @createPigmentsReport()
 
     convertMethod = (action) => (event) =>
-      marker = if @lastEvent?
+      if @lastEvent?
         action @colorMarkerForMouseEvent(@lastEvent)
       else
         editor = atom.workspace.getActiveTextEditor()
@@ -123,6 +137,18 @@ module.exports =
         editor.getCursors().forEach (cursor) =>
           marker = colorBuffer.getColorMarkerAtBufferPosition(cursor.getBufferPosition())
           action(marker)
+
+      @lastEvent = null
+
+    copyMethod = (action) => (event) =>
+      if @lastEvent?
+        action @colorMarkerForMouseEvent(@lastEvent)
+      else
+        editor = atom.workspace.getActiveTextEditor()
+        colorBuffer = @project.colorBufferForEditor(editor)
+        cursor = editor.getLastCursor()
+        marker = colorBuffer.getColorMarkerAtBufferPosition(cursor.getBufferPosition())
+        action(marker)
 
       @lastEvent = null
 
@@ -141,6 +167,21 @@ module.exports =
 
       'pigments:convert-to-hsla': convertMethod (marker) ->
         marker.convertContentToHSLA() if marker?
+
+      'pigments:copy-as-hex': copyMethod (marker) ->
+        marker.copyContentAsHex() if marker?
+
+      'pigments:copy-as-rgb': copyMethod (marker) ->
+        marker.copyContentAsRGB() if marker?
+
+      'pigments:copy-as-rgba': copyMethod (marker) ->
+        marker.copyContentAsRGBA() if marker?
+
+      'pigments:copy-as-hsl': copyMethod (marker) ->
+        marker.copyContentAsHSL() if marker?
+
+      'pigments:copy-as-hsla': copyMethod (marker) ->
+        marker.copyContentAsHSLA() if marker?
 
     atom.workspace.addOpener (uriToOpen) =>
       url ||= require 'url'
@@ -162,6 +203,12 @@ module.exports =
           {label: 'Convert to RGBA', command: 'pigments:convert-to-rgba'}
           {label: 'Convert to HSL', command: 'pigments:convert-to-hsl'}
           {label: 'Convert to HSLA', command: 'pigments:convert-to-hsla'}
+          {type: 'separator'}
+          {label: 'Copy as hexadecimal', command: 'pigments:copy-as-hex'}
+          {label: 'Copy as RGB', command: 'pigments:copy-as-rgb'}
+          {label: 'Copy as RGBA', command: 'pigments:copy-as-rgba'}
+          {label: 'Copy as HSL', command: 'pigments:copy-as-hsl'}
+          {label: 'Copy as HSLA', command: 'pigments:copy-as-hsla'}
         ]
         shouldDisplay: (event) => @shouldDisplayContextMenu(event)
       }]
@@ -284,6 +331,54 @@ module.exports =
 
     JSON.stringify(o, null, 2)
     .replace(///#{atom.project.getPaths().join('|')}///g, '<root>')
+
+  patchAtom: ->
+    requireCore = (name) ->
+      require Object.keys(require.cache).filter((s) -> s.indexOf(name) > -1)[0]
+
+    HighlightComponent = requireCore('highlights-component')
+    TextEditorPresenter = requireCore('text-editor-presenter')
+
+    unless TextEditorPresenter.getTextInScreenRange?
+      TextEditorPresenter::getTextInScreenRange = (screenRange) ->
+        if @displayLayer?
+          @model.getTextInRange(@displayLayer.translateScreenRange(screenRange))
+        else
+          @model.getTextInRange(@model.bufferRangeForScreenRange(screenRange))
+
+      _buildHighlightRegions = TextEditorPresenter::buildHighlightRegions
+      TextEditorPresenter::buildHighlightRegions = (screenRange) ->
+        regions = _buildHighlightRegions.call(this, screenRange)
+
+        if regions.length is 1
+          regions[0].text = @getTextInScreenRange(screenRange)
+        else
+          regions[0].text = @getTextInScreenRange([
+            screenRange.start
+            [screenRange.start.row, Infinity]
+          ])
+          regions[regions.length - 1].text = @getTextInScreenRange([
+            [screenRange.end.row, 0]
+            screenRange.end
+          ])
+
+          if regions.length > 2
+            regions[1].text = @getTextInScreenRange([
+              [screenRange.start.row + 1, 0]
+              [screenRange.end.row - 1, Infinity]
+            ])
+
+        regions
+
+      _updateHighlightRegions = HighlightComponent::updateHighlightRegions
+      HighlightComponent::updateHighlightRegions = (id, newHighlightState) ->
+        _updateHighlightRegions.call(this, id; newHighlightState)
+
+        if newHighlightState.class?.match /^pigments-native-background\s/
+          for newRegionState, i in newHighlightState.regions
+            regionNode = @regionNodesByHighlightId[id][i]
+
+            regionNode.textContent = newRegionState.text if newRegionState.text?
 
   loadDeserializersAndRegisterViews: ->
     ColorBuffer = require './color-buffer'

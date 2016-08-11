@@ -10,7 +10,6 @@
       "language-c"
       "language-clojure"
       "language-java"
-      "language-less"
       "language-make"
       "language-objective-c"
       "language-perl"
@@ -19,6 +18,8 @@
       "package-generator"
       "welcome"
       "go-plus"
+      "language-mustache"
+      "git-time-machine"
     ]
     ignoredNames: [
       "coverage/**"
@@ -34,7 +35,7 @@
     ]
   editor:
     fontFamily: "OpenDyslexicMono"
-    fontSize: 15
+    fontSize: 17
     invisibles: {}
     preferredLineLength: 79
     showInvisibles: true
