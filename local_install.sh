@@ -16,7 +16,8 @@ sudo apt-get install -y atom
 sudo apt-get install -y fonts-opendyslexic
 
 echo -e "\n\n\n\n\nInstalling Ruby\n\n\n\n\n"
-\curl -sSL https://get.rvm.io | bash -s stable --rails
+command curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
+curl -sSL https://get.rvm.io | bash -s stable --rails
 source ~/.rvm/scripts/rvm
 
 echo -e "\n\n\n\n\nCleanup\n\n\n\n\n"
@@ -32,8 +33,10 @@ cp -r ~/.gemrc ~/.gemrc.old 2>/dev/null
 rm -f ~/.gemrc 2>/dev/null
 ln -s ~/dotfiles/gemrc ~/.gemrc
 
-sudo gem install bundler
-sudo gem install rails
+cd .
+
+gem install bundler
+gem install rails
 
 echo -e "\n\n\n\n\nCreating git reposetory\n\n\n\n\n"
 mkdir ~/dotfiles
