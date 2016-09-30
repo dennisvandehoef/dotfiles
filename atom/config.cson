@@ -35,7 +35,7 @@
     ]
   editor:
     fontFamily: "OpenDyslexicMono"
-    fontSize: 17
+    fontSize: 18
     invisibles: {}
     preferredLineLength: 79
     showInvisibles: true
@@ -55,6 +55,7 @@
     enableVcsColoring: true
     tabScrolling: true
     usePreviewTabs: true
+  "tree-view": {}
   welcome:
     showOnStartup: false
 ".haml.text":

@@ -1,14 +1,15 @@
-[![Build Status](https://img.shields.io/travis/silvestreh/atom-material-ui.svg?style=flat-square)](https://travis-ci.org/silvestreh/atom-material-ui)
+[![Build Status](https://img.shields.io/travis/atom-material/atom-material-ui.svg?style=flat-square)](https://travis-ci.org/atom-material/atom-material-ui)
 [![apm](https://img.shields.io/apm/dm/atom-material-ui.svg?style=flat-square)](https://atom.io/packages/atom-material-ui)
 [![apm](https://img.shields.io/apm/v/atom-material-ui.svg?style=flat-square)](https://atom.io/packages/atom-material-ui)
 [![apm](https://img.shields.io/apm/l/atom-material-ui.svg?style=flat-square)]()
 [![Gitter](https://img.shields.io/gitter/room/silvestreh/atom-material-ui.svg?style=flat-square)](https://gitter.im/silvestreh/atom-material-ui)
-[![Gratipay](https://img.shields.io/gratipay/user/silvestreh.svg?style=flat-square)](https://gratipay.com/Atom-Material-UI/)
+
+[![Support AMU](https://pledgie.com/campaigns/29552.png?skin_name=chrome)](https://pledgie.com/campaigns/29552)
 
 ![AMU](http://i.imgur.com/7C2H2mw.png)
 ---
 
-A dynamic UI theme for Atom that (kinda) follows Google's Material Design Guidelines. Best with [Atom Material Syntax](https://github.com/silvestreh/atom-material-syntax).
+A dynamic UI theme for Atom that (kinda) follows Google's Material Design Guidelines. Best with [Atom Material Syntax](https://github.com/atom-material/atom-material-syntax).
 
 Inspired by Mattia Astorino's [SublimeText theme](https://github.com/equinusocio/material-theme).
 
@@ -60,7 +61,7 @@ apm install atom-material-syntax-dark
 
 # Contributing
 
-Please check the [CONTRIBUTING.md](https://github.com/silvestreh/atom-material-ui/blob/master/CONTRIBUTING.md) file.
+Please check the [CONTRIBUTING.md](https://github.com/atom-material/atom-material-ui/blob/master/CONTRIBUTING.md) file.
 
 # Extra
 
@@ -71,4 +72,4 @@ You can download the redesigned icon from [dropbox](https://dl.dropboxuserconten
 # License
 Atom Material UI is licensed under MIT.
 
-View the license file [here](https://github.com/silvestreh/atom-material-ui/blob/master/LICENSE.md)
+View the license file [here](https://github.com/atom-material/atom-material-ui/blob/master/LICENSE.md)
