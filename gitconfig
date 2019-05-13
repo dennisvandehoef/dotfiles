@@ -1,6 +1,7 @@
 [user]
   name = Dennis van de Hoef
-  email = dennisvdhoef@gmail.com
+	email = dennis.vandehoef@aroundhome.de
+	signingkey = 70317EF1AF911C96
 [alias]
   br = branch
   ci = commit
@@ -30,3 +31,7 @@
   mergeoptions = "--no-edit"
   precomposeunicode = false
   excludesfile = ~/.gitignore_global
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
