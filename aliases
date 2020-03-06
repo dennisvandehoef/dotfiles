@@ -12,5 +12,5 @@ alias gpl="git pl"
 alias gps="git push"
 alias gst="git st"
 
-alias staging="~/dotfiles/aws-switch-to.sh staging"
-alias production="~/dotfiles/aws-switch-to.sh production"
+alias staging="source ~/dotfiles/aws-switch-to.sh staging"
+alias production="source ~/dotfiles/aws-switch-to.sh production"
