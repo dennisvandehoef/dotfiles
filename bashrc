@@ -12,3 +12,6 @@ export GPG_TTY=$(tty)
 
 source ~/dotfiles/aliases
 source ~/dotfiles/git-prompt.sh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

@@ -14,3 +14,9 @@ alias gst="git st"
 
 alias staging="source ~/dotfiles/aws-switch-to.sh staging"
 alias production="source ~/dotfiles/aws-switch-to.sh production"
+alias kexec="source ~/dotfiles/kube-start.sh $1 $2"
+
+alias konsole="kubectl -n ca exec -it $(kubectl -n ca get pods --no-headers -o custom-columns=':metadata.name' | grep 'cms-app' | head -1) -c 'cms-app' ./entrypoint.sh /bin/bash"
+
+alias kc='f() { echo "Loading Console for $1" && kubectl -n ca exec -it $(kubectl -n ca get pods --no-headers -o custom-columns=":metadata.name" | grep "${1}-app" | head -1) -c "${1}-app" ./entrypoint.sh rails c };f'
+alias kb='f() { echo "Loading Console for $1" && kubectl -n ca exec -it $(kubectl -n ca get pods --no-headers -o custom-columns=":metadata.name" | grep "${1}-app" | head -1) -c "${1}-app" ./entrypoint.sh bash };f'
