@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+source "$HOME/code/kp/tools/frontend-config/bin/common-frontend.sh"
+
+#install software
+while read line
+do
+  [ "${line###*}" ] && brew $line
+done < $KPF_FRONTEND_CONFIG_TOOLS_SOURCES/Brewfile
