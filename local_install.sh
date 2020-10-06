@@ -1,29 +1,5 @@
-sudo add-apt-repository ppa:webupd8team/atom
-
-echo -e "\n\n\n\n\nUpdate apt-get\n\n\n\n\n"
-sudo apt-get update
-
-echo -e "\n\n\n\n\nInstalling software\n\n\n\n\n"
-sudo apt-get install -y mysql-server
-sudo apt-get install -y git
-sudo apt-get install -y tree
-sudo apt-get install -y bundler
-sudo apt-get install -y unrar
-sudo apt-get install -y vim-gnome
-sudo apt-get install -y nodejs
-sudo apt-get install -y libmysqlclient-dev
-sudo apt-get install -y atom
-sudo apt-get install -y fonts-opendyslexic
-
 echo -e "\n\n\n\n\nInstalling Ruby\n\n\n\n\n"
-command curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
-curl -sSL https://get.rvm.io | bash -s stable --rails
-source ~/.rvm/scripts/rvm
 
-echo -e "\n\n\n\n\nCleanup\n\n\n\n\n"
-sudo apt-get autoremove
-sudo apt-get clean
-sudo apt-get autoclean
 
 rvm rvmrc warning ignore all.rvmrcs
 rvm rvmrc warning ignore allGemfiles
@@ -106,8 +82,4 @@ cp -r ~/.atom/init.coffee ~/.atom/init.coffee.old 2>/dev/null
 rm -f ~/.atom/init.coffee 2>/dev/null
 ln -s ~/dotfiles/atom/init.coffee ~/.atom/init.coffee
 
-#mac @ work
 echo '[[ -s "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"' >> ~/.bash_profile
-
-echo -e "\n\n\n\n\nFirst step is done\n\n\n\n\n"
-echo -e "TODO:\n\nCreate SSH key end add on github.com\nManual: https://help.github.com/articles/generating-ssh-keys/"

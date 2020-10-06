@@ -1,8 +1,13 @@
 export HISTSIZE=1000000
 export HISTFILESIZE=1000000000
-export HISTCONTROL=ignoredups
+export HISTCONTROL=ignorespace:ignoredups
 
-export PS1='\[\e[2;49;37m\]\w\[\e[m\]$(__git_ps1  " [%s]"): '
+source ~/dotfiles/aliases
+source ~/dotfiles/git-prompt.sh
+source ~/dotfiles/git-completion.sh
+source ~/dotfiles/prompt.sh
+
+export PS1='$(__prompt_non_higlight "\w")$(__prompt_git)$(__prompt_aws)$(__prompt_non_higlight ">") '
 
 USER_BASE_PATH=$(python -m site --user-base)
 export PATH=$PATH:$USER_BASE_PATH
@@ -10,8 +15,6 @@ export PATH=$PATH:$USER_BASE_PATH/bin
 
 export GPG_TTY=$(tty)
 
-source ~/dotfiles/aliases
-source ~/dotfiles/git-prompt.sh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
