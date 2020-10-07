@@ -1,6 +1,5 @@
 
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
-[[ -s "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"
 
 export GOPATH=/Users/dennisvandehoef/code/kp/go
 export PATH=/Users/dennisvandehoef/code/kp/go/bin:/Users/dennisvandehoef/code/kp/tools/command-line-tools-kp/bin:/Users/dennisvandehoef/code/kp/tools/frontend-config/bin:/Users/dennisvandehoef/.rvm/gems/ruby-2.3.1/bin:/Users/dennisvandehoef/.rvm/gems/ruby-2.3.1@global/bin:/Users/dennisvandehoef/.rvm/rubies/ruby-2.3.1/bin:/Users/dennisvandehoef/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/dennisvandehoef/code/kp/go/bin:/Users/dennisvandehoef/code/kp/tools/command-line-tools-kp/bin:/Users/dennisvandehoef/code/kp/tools/frontend-config/bin:/Users/dennisvandehoef/code/kp/go/bin

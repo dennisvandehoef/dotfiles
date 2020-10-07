@@ -2,7 +2,7 @@ export HISTSIZE=1000000
 export HISTFILESIZE=1000000000
 export HISTCONTROL=ignorespace:ignoredups
 
-source ~/dotfiles/aliases
+source ~/dotfiles/aliases.sh
 source ~/dotfiles/git-prompt.sh
 source ~/dotfiles/git-completion.sh
 source ~/dotfiles/prompt.sh

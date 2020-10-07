@@ -43,10 +43,6 @@ ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore_global ~/.gitignore_global
 
 echo -e "\n\n\n\n\nConfig terminal\n\n\n\n\n"
-cp -r ~/.bash_aliases ~/.bash_aliases.old >>/dev/null
-rm -f ~/.bash_aliases >>/dev/null
-ln -s ~/dotfiles/aliases ~/.bash_aliases
-
 cp -r ~/.bashrc ~/.bashrc.old >>/dev/null
 rm -f ~/.bashrc >>/dev/null
 ln -s ~/dotfiles/bashrc ~/.bashrc
