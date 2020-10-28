@@ -39,3 +39,30 @@ update_ruby(){
   sed -i -E "s/ruby [a-z0-9.-]{2,}/ruby $version/" Gemfile.lock
   docker-compose build
 }
+
+t_plan(){
+  local env=$1
+
+  if [ -z "$env" ]; then
+    env='staging'
+  fi
+
+  source ~/dotfiles/aws-switch-to.sh $env
+  echo "AWS swiched to $(__colored_aws_env)"
+
+  terraform init --backend-config=$env.backend --reconfigure
+  terraform plan --var-file=$env.tfvars
+}
+
+t_apply(){
+  local env=$1
+
+  if [ -z "$env" ]; then
+    env='staging'
+  fi
+
+  source ~/dotfiles/aws-switch-to.sh $env
+  echo "AWS swiched to $(__colored_aws_env)"
+
+  terraform apply --var-file=staging.tfvars
+}

@@ -1,4 +1,5 @@
 tap homebrew/dupes
+tap hashicorp/tap
 
 update
 upgrade

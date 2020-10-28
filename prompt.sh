@@ -1,12 +1,15 @@
 __prompt_aws ()
 {
-
-  local account=$AWS_ACCOUNT_NAME
-  local color='0;35m'
-
-  if [ -z "$account" ]; then
+  if [ -z "$AWS_ACCOUNT_NAME" ]; then
     exit 0
   fi
+
+  printf -- "$(__prompt_non_higlight '|')$(__colored_aws_env)"
+}
+
+__colored_aws_env(){
+  local account=$AWS_ACCOUNT_NAME
+  local color='0;35m'
 
   case "$account" in
     production)    color='0;31m' ;;
@@ -15,7 +18,7 @@ __prompt_aws ()
     services)      color='0;36m' ;;
   esac
 
-  printf -- "$(__prompt_non_higlight '|')\e[$color$account\e[m"
+  printf -- "\e[$color$account\e[m"
 }
 
 __prompt_git ()
