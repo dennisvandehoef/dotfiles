@@ -30,3 +30,12 @@ dash()
 
   docker-compose run --no-deps --rm $service /bin/bash
 }
+
+update_ruby(){
+  local version=$1
+
+  echo $version >.ruby-version
+  sed -i -E "s/FROM ruby:[a-z0-9.-]{2,}/FROM ruby:$version/" Dockerfile
+  sed -i -E "s/ruby [a-z0-9.-]{2,}/ruby $version/" Gemfile.lock
+  docker-compose build
+}
