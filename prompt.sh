@@ -4,7 +4,7 @@ __prompt_aws ()
     exit 0
   fi
 
-  printf -- "$(__prompt_non_higlight '|')$(__colored_aws_env)"
+  printf "$(__prompt_non_higlight '|')$(__colored_aws_env)"
 }
 
 __colored_aws_env(){
@@ -18,7 +18,7 @@ __colored_aws_env(){
     services)      color='0;36m' ;;
   esac
 
-  printf -- "\e[$color$account\e[m"
+  printf "\e[$color$account\e[m"
 }
 
 __prompt_git ()
@@ -29,10 +29,10 @@ __prompt_git ()
     exit 0
   fi
 
-  printf -- "$(__prompt_non_higlight '|')$git_str"
+  printf "$(__prompt_non_higlight '|')$git_str"
 }
 
 __prompt_non_higlight ()
 {
-  printf -- "\e[2;49;37m$1\e[m"
+  printf "\e[2;49;37m$1\e[m"
 }
