@@ -7,7 +7,7 @@ source ~/dotfiles/git-prompt.sh
 source ~/dotfiles/git-completion.sh
 source ~/dotfiles/prompt.sh
 
-export PS1='$(__prompt_non_higlight "\w")$(__prompt_git)$(__prompt_aws)$(__prompt_non_higlight ">") '
+export PS1='\[$(__prompt_non_higlight "\w")$(__prompt_git)$(__prompt_aws)$(__prompt_non_higlight ">")\] '
 
 USER_BASE_PATH=$(python -m site --user-base)
 export PATH=$PATH:$USER_BASE_PATH
