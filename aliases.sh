@@ -64,5 +64,5 @@ t_apply(){
   source ~/dotfiles/aws-switch-to.sh $env
   echo "AWS swiched to $(__colored_aws_env)"
 
-  terraform apply --var-file=staging.tfvars
+  terraform apply --var-file=$env.tfvars
 }
