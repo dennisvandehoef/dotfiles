@@ -1,10 +1,8 @@
 alias .='cd . && ls -al'
 alias ..="cd .."
-alias ...="cd ../.."
 
 alias ls='ls -al'
 
-alias code="cd ~/code"
 alias dotfiles="cd ~/dotfiles"
 
 # GIT
