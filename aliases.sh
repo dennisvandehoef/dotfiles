@@ -1,9 +1,8 @@
-alias .='cd . && ls -al'
 alias ..="cd .."
 
 alias ls='ls -al'
-
 alias dotfiles="cd ~/dotfiles"
+alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 
 # GIT
 alias g="git"
@@ -16,18 +15,7 @@ alias staging="source ~/dotfiles/aws-switch-to.sh staging"
 alias production="source ~/dotfiles/aws-switch-to.sh production"
 alias services="source ~/dotfiles/aws-switch-to.sh services"
 alias kaeuferportal="source ~/dotfiles/aws-switch-to.sh kaeuferportal"
-
-# Docker
-dash()
-{
-  local service=$1
-
-  if [ -z "$service" ]; then
-    service='web'
-  fi
-
-  docker-compose run --no-deps --rm $service /bin/bash
-}
+alias data="source ~/dotfiles/aws-switch-to.sh data"
 
 update_ruby(){
   local version=$1
@@ -49,7 +37,13 @@ t_plan(){
   echo "AWS swiched to $(__colored_aws_env)"
 
   terraform init --backend-config=$env.backend --reconfigure
-  terraform plan --var-file=$env.tfvars
+  if [ -f "$env.tfvars" ]; then
+    terraform plan --var-file=$env.tfvars
+  elif [ -f "common.tfvars" ]; then
+    terraform plan --var-file=common.tfvars
+  else
+    terraform plan
+  fi
 }
 
 t_apply(){
@@ -62,5 +56,11 @@ t_apply(){
   source ~/dotfiles/aws-switch-to.sh $env
   echo "AWS swiched to $(__colored_aws_env)"
 
-  terraform apply --var-file=$env.tfvars
+  if [ -f "$env.tfvars" ]; then
+    terraform apply --var-file=$env.tfvars
+  elif [ -f "common.tfvars" ]; then
+    terraform apply --var-file=common.tfvars
+  else
+    terraform apply
+  fi
 }
