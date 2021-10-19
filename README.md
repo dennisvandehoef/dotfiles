@@ -7,3 +7,5 @@ first:
 
 second:
  Create SSH key end add on github.com, Manual: https://help.github.com/articles/generating-ssh-keys/
+
+after setting up ssh, run `git remote set-url --push origin git@github.com:dennisvandehoef/dotfiles.git`
