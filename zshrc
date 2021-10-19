@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git-prompt zsh-autosuggestions aws docker docker-compose ssh-agent)
+plugins=(zsh-autosuggestions aws docker docker-compose ssh-agent)
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities dennish_kp dennish_kp.old ops
