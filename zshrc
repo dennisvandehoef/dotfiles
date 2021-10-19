@@ -72,6 +72,9 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git-prompt zsh-autosuggestions aws docker docker-compose ssh-agent)
 
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent identities dennish_kp dennish_kp.old ops
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -88,7 +91,6 @@ export PATH=$PATH:$USER_BASE_PATH
 export PATH=$PATH:$USER_BASE_PATH/bin
 
 export GPG_TTY=$(tty)
-
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
