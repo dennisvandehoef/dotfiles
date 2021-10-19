@@ -2,6 +2,7 @@ alias ..="cd .."
 
 alias ls='ls -al'
 alias dotfiles="cd ~/dotfiles"
+alias arh="cd ~/code/arh"
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 
 # GIT
