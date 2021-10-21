@@ -31,7 +31,3 @@
   mergeoptions = "--no-edit"
   precomposeunicode = false
   excludesfile = ~/.gitignore_global
-[commit]
-	gpgsign = true
-[gpg]
-	program = gpg
