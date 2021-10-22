@@ -1,19 +1,3 @@
-echo -e "\n\n\n\n\nInstalling Ruby\n\n\n\n\n"
-
-
-rvm rvmrc warning ignore all.rvmrcs
-rvm rvmrc warning ignore allGemfiles
-
-echo -e "\n\n\n\n\nConfig Gem\n\n\n\n\n"
-cp -r ~/.gemrc ~/.gemrc.old >>/dev/null
-rm -f ~/.gemrc >>/dev/null
-ln -s ~/dotfiles/gemrc ~/.gemrc
-
-cd .
-
-gem install bundler
-gem install rails
-
 echo -e "\n\n\n\n\nCreating git reposetory\n\n\n\n\n"
 mkdir ~/dotfiles
 mkdir ~/code
