@@ -1,7 +1,7 @@
 echo -e "\n\n\n\n\nCreating git reposetory\n\n\n\n\n"
-mkdir ~/dotfiles
-mkdir ~/code
-git clone https://github.com/dennisvandehoef/dotfiles.git ~/dotfiles
+mkdir -p ~/code/arh
+mkdir -p ~/code/private/dotfiles
+git clone https://github.com/dennisvandehoef/dotfiles.git ~/code/private/dotfiles
 
 echo -e "\n\n\n\n\nConfig VIM\n\n\n\n\n"
 cp -r ~/.vim ~/.vim.old >>/dev/null
@@ -12,9 +12,9 @@ rm -fr ~/.vim >>/dev/null
 rm -f /usr/local/bin/vim  >>/dev/null
 rm -f ~/.vimrc >>/dev/null
 
-ln -s ~/dotfiles/vim ~/.vim
-ln -s ~/dotfiles/vim /usr/local/bin/vim
-ln -s ~/dotfiles/vimrc ~/.vimrc
+ln -s ~/code/private/dotfiles/vim ~/.vim
+ln -s ~/code/private/dotfiles/vim /usr/local/bin/vim
+ln -s ~/code/private/dotfiles/vim/vimrc ~/.vimrc
 
 echo -e "\n\n\n\n\nConfig GIT\n\n\n\n\n"
 cp -r ~/.gitconfig ~/.gitconfig.old >>/dev/null
@@ -23,8 +23,8 @@ cp -r ~/.gitignore_global ~/.gitignore_global.old >>/dev/null
 rm -f ~/.gitconfig >>/dev/null
 rm -f ~/.gitignore_global >>/dev/null
 
-ln -s ~/dotfiles/gitconfig ~/.gitconfig
-ln -s ~/dotfiles/gitignore_global ~/.gitignore_global
+ln -s ~/code/private/dotfiles/gitconfig ~/.gitconfig
+ln -s ~/code/private/dotfiles/gitignore_global ~/.gitignore_global
 
 echo -e "\n\n\n\n\nConfig terminal\n\n\n\n\n"
 cp -r ~/.bashrc ~/.bashrc.old >>/dev/null
