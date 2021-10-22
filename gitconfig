@@ -1,7 +1,6 @@
 [user]
 	name = Dennis van de Hoef
 	email = dennis.vandehoef@aroundhome.de
-	signingkey = 70317EF1AF911C96
 [alias]
   br = branch
   ci = commit
