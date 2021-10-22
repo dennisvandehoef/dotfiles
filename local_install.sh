@@ -26,14 +26,11 @@ rm -f ~/.gitignore_global >>/dev/null
 ln -s ~/code/private/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/code/private/dotfiles/gitignore_global ~/.gitignore_global
 
-echo -e "\n\n\n\n\nConfig terminal\n\n\n\n\n"
-cp -r ~/.bashrc ~/.bashrc.old >>/dev/null
-rm -f ~/.bashrc >>/dev/null
-ln -s ~/dotfiles/bashrc ~/.bashrc
+echo -e "\n\n\n\n\nzsh\n\n\n\n\n"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-cp -r ~/.inputrc ~/.inputrc.old >>/dev/null
-rm -f ~/.inputrc >>/dev/null
-ln -s ~/dotfiles/inputrc ~/.inputrc
+# install plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 echo -e "\n\n\n\n\nConfig ATOM\n\n\n\n\n"
 mkdir ~/.atom
@@ -62,4 +59,6 @@ cp -r ~/.atom/init.coffee ~/.atom/init.coffee.old >>/dev/null
 rm -f ~/.atom/init.coffee >>/dev/null
 ln -s ~/dotfiles/atom/init.coffee ~/.atom/init.coffee
 
-echo '[[ -s "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"' >> ~/.bash_profile
+cp -r ~/.zshrc ~/.zshrc.old >>/dev/null
+rm -f ~/.zshrc >>/dev/null
+ln -s ~/code/private/dotfiles/zshrc ~/.zshrc
