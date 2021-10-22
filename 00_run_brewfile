@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-#install software
-while read line
-do
-  [ "${line###*}" ] && brew $line
-done < Brewfile

@@ -12,3 +12,10 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 echo "Don't automatically rearrange Spaces based on most recent use"
 defaults write com.apple.dock mru-spaces -bool false
+
+
+#install brewfile
+while read line
+do
+  [ "${line###*}" ] && brew $line
+done < Brewfile
