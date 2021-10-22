@@ -32,33 +32,6 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 # install plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-echo -e "\n\n\n\n\nConfig ATOM\n\n\n\n\n"
-mkdir ~/.atom
-
-cp -r ~/.atom/config.cson ~/.atom/config.cson.old >>/dev/null
-rm -f ~/.atom/config.cson >>/dev/null
-ln -s ~/dotfiles/atom/config.cson ~/.atom/config.cson
-
-cp -r ~/.atom/keymap.cson ~/.atom/keymap.cson.old >>/dev/null
-rm -f ~/.atom/keymap.cson >>/dev/null
-ln -s ~/dotfiles/atom/keymap.cson ~/.atom/keymap.cson
-
-cp -r ~/.atom/snippets.cson ~/.atom/snippets.cson.old >>/dev/null
-rm -f ~/.atom/snippets.cson >>/dev/null
-ln -s ~/dotfiles/atom/snippets.cson ~/.atom/snippets.cson
-
-cp -r ~/.atom/styles.less ~/.atom/styles.less.old >>/dev/null
-rm -f ~/.atom/styles.less >>/dev/null
-ln -s ~/dotfiles/atom/styles.less ~/.atom/styles.less
-
-cp -r ~/.atom/packages ~/.atom/packages.old >>/dev/null
-rm -f ~/.atom/packages >>/dev/null
-ln -s ~/dotfiles/atom/packages ~/.atom/packages
-
-cp -r ~/.atom/init.coffee ~/.atom/init.coffee.old >>/dev/null
-rm -f ~/.atom/init.coffee >>/dev/null
-ln -s ~/dotfiles/atom/init.coffee ~/.atom/init.coffee
-
 cp -r ~/.zshrc ~/.zshrc.old >>/dev/null
 rm -f ~/.zshrc >>/dev/null
 ln -s ~/code/private/dotfiles/zshrc ~/.zshrc

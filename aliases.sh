@@ -1,8 +1,9 @@
 alias ..="cd .."
 
-alias ls='ls -al'
-alias dotfiles="cd ~/dotfiles"
+alias ls='ls -alhG'
+alias dotfiles="cd ~/code/private/dotfiles"
 alias arh="cd ~/code/arh"
+alias private="cd ~/code/private"
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 
 # GIT
@@ -25,43 +26,4 @@ update_ruby(){
   sed -i -E "s/FROM ruby:[a-z0-9.-]{2,}/FROM ruby:$version/" Dockerfile
   sed -i -E "s/ruby [a-z0-9.-]{2,}/ruby $version/" Gemfile.lock
   docker-compose build
-}
-
-t_plan(){
-  local env=$1
-
-  if [ -z "$env" ]; then
-    env='staging'
-  fi
-
-  source ~/dotfiles/aws-switch-to.sh $env
-  echo "AWS swiched to $(__colored_aws_env)"
-
-  terraform init --backend-config=$env.backend --reconfigure
-  if [ -f "$env.tfvars" ]; then
-    terraform plan --var-file=$env.tfvars
-  elif [ -f "common.tfvars" ]; then
-    terraform plan --var-file=common.tfvars
-  else
-    terraform plan
-  fi
-}
-
-t_apply(){
-  local env=$1
-
-  if [ -z "$env" ]; then
-    env='staging'
-  fi
-
-  source ~/dotfiles/aws-switch-to.sh $env
-  echo "AWS swiched to $(__colored_aws_env)"
-
-  if [ -f "$env.tfvars" ]; then
-    terraform apply --var-file=$env.tfvars
-  elif [ -f "common.tfvars" ]; then
-    terraform apply --var-file=common.tfvars
-  else
-    terraform apply
-  fi
 }
