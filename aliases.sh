@@ -13,11 +13,11 @@ alias gps="git push"
 alias gst="git st"
 
 # EKS
-alias staging="source ~/dotfiles/aws-switch-to.sh staging"
-alias production="source ~/dotfiles/aws-switch-to.sh production"
-alias services="source ~/dotfiles/aws-switch-to.sh services"
+alias staging="source ~/code/private/dotfiles/aws-switch-to.sh staging"
+alias production="source ~/code/private/dotfiles/aws-switch-to.sh production"
+alias services="source ~/code/private/dotfiles/aws-switch-to.sh services"
 alias kaeuferportal="source ~/dotfiles/aws-switch-to.sh kaeuferportal"
-alias data="source ~/dotfiles/aws-switch-to.sh data"
+alias data="source ~/code/private/dotfiles/aws-switch-to.sh data"
 
 update_ruby(){
   local version=$1
