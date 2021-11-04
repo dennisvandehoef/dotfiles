@@ -25,8 +25,8 @@ install wget
 
 
 install caskroom/cask/brew-cask
-cask install rowanj-gitx
-cask install sequel-pro
+install rowanj-gitx
+install sequel-pro
 
 link
 cleanup
