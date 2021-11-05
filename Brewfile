@@ -24,7 +24,7 @@ install htop
 install wget
 
 
-install caskroom/cask/brew-cask
+tap homebrew/cask
 install rowanj-gitx
 install sequel-pro
 
