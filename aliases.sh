@@ -16,7 +16,8 @@ alias gst="git st"
 alias staging="source ~/code/private/dotfiles/aws-switch-to.sh staging"
 alias production="source ~/code/private/dotfiles/aws-switch-to.sh production"
 alias services="source ~/code/private/dotfiles/aws-switch-to.sh services"
-alias kaeuferportal="source ~/dotfiles/aws-switch-to.sh kaeuferportal"
+alias kaeuferportal="source ~/code/private/dotfiles/aws-switch-to.sh kaeuferportal"
+alias development="source ~/code/private/dotfiles/aws-switch-to.sh development"
 alias data="source ~/code/private/dotfiles/aws-switch-to.sh data"
 
 update_ruby(){
