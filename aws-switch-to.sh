@@ -9,9 +9,9 @@ function aws_switch_to () {
 
   aws sts get-caller-identity
 
-  echo "Please provide the target cluster name. (Use list to 'list'or 'l' avalible clusters, use 'none' or 'n' to skipp connecting to a cluster) "
-  echo " - Use list to 'list'or 'l' avalible clusters"
-  echo " - Use 'none', 'n' or press enter to skip connecting to a cluster "
+  echo "Please provide the wished cluster name or type one of the following options:"
+  echo " - Use 'list' or 'l' to list available clusters and select one"
+  echo " - Use 'none', 'n' or press enter to skip connecting to a cluster"
   read cluster_name
 
   if [[ "$cluster_name" == "none" || "$cluster_name" == "n" ]]; then
@@ -19,6 +19,8 @@ function aws_switch_to () {
   fi
 
   if [[ "$cluster_name" == "list" || "$cluster_name" == "l" ]]; then
+    echo "Please select a cluster by number"
+    echo "0) None (skip connecting to a cluster)"
     cluster_name=""
     select cluster_name in $(aws eks list-clusters --query clusters --output text); do
       break
