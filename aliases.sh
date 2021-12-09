@@ -12,13 +12,14 @@ alias gpl="git pl"
 alias gps="git push"
 alias gst="git st"
 
-# EKS
-alias staging="source ~/code/private/dotfiles/aws-switch-to.sh staging"
-alias production="source ~/code/private/dotfiles/aws-switch-to.sh production"
-alias services="source ~/code/private/dotfiles/aws-switch-to.sh services"
-alias kaeuferportal="source ~/code/private/dotfiles/aws-switch-to.sh kaeuferportal"
-alias development="source ~/code/private/dotfiles/aws-switch-to.sh development"
-alias data="source ~/code/private/dotfiles/aws-switch-to.sh data"
+# AWS & EKS
+source ~/code/private/dotfiles/aws-switch-to.sh
+alias staging="aws_switch_to staging"
+alias production="aws_switch_to production"
+alias services="aws_switch_to services"
+alias kaeuferportal="aws_switch_to kaeuferportal"
+alias development="aws_switch_to development"
+alias data="aws_switch_to data"
 
 update_ruby(){
   local version=$1
@@ -28,3 +29,4 @@ update_ruby(){
   sed -i -E "s/ruby [a-z0-9.-]{2,}/ruby $version/" Gemfile.lock
   docker-compose build
 }
+
