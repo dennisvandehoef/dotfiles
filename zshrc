@@ -41,7 +41,7 @@ ZSH_THEME="crunch"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -89,9 +89,9 @@ set completion-ignore-case on
 
 source ~/code/private/dotfiles/aliases.sh
 
-USER_BASE_PATH=$(python -m site --user-base)
-export PATH=$PATH:$USER_BASE_PATH
-export PATH=$PATH:$USER_BASE_PATH/bin
+PYTHON_BASE_PATH=$(python -m site --user-base)
+export PATH=$PATH:$PYTHON_BASE_PATH
+export PATH=$PATH:$PYTHON_BASE_PATH/bin
 
 export GPG_TTY=$(tty)
 

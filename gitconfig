@@ -30,3 +30,5 @@
   mergeoptions = "--no-edit"
   precomposeunicode = false
   excludesfile = ~/.gitignore_global
+[init]
+	defaultBranch = main
