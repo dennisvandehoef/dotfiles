@@ -92,6 +92,7 @@ source ~/code/private/dotfiles/aliases.sh
 PYTHON_BASE_PATH=$(python -m site --user-base)
 export PATH=$PATH:$PYTHON_BASE_PATH
 export PATH=$PATH:$PYTHON_BASE_PATH/bin
+export PATH=$PATH:$HOME/go/bin
 
 export GPG_TTY=$(tty)
 
