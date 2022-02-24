@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function aws_switch_to () {
+function aws_switch_to() {
   envname=$1
 
   export AWS_PROFILE=$envname
@@ -12,7 +12,7 @@ function aws_switch_to () {
   echo "Please provide the wished cluster name or type one of the following options:"
   echo " - Use 'list' or 'l' to list available clusters and select one"
   echo " - Use 'active', 'a' or press enter to connect to the active cluster"
-  echo " - Use 'none' or 'n' to skip connecting to a cluster"
+  echo " - Use 'none' or 'n' to skip connecting to a cluster (removes current)"
   read cluster_name
 
   # needs to be first, to correctly process pressing enter
@@ -42,6 +42,7 @@ function aws_switch_to () {
   if [[ "$cluster_name" != "" ]]; then
     aws eks update-kubeconfig --name $cluster_name --region $AWS_DEFAULT_REGION
   else;
-    echo "!! WARDNING !! We did not update the kubeconfig !!"
+    kubectl config unset current-context
+    echo "Unset Kubernetes context"
   fi
 }
