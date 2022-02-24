@@ -70,7 +70,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions aws docker docker-compose ssh-agent zsh-kubectl-prompt)
+plugins=(aws docker docker-compose ssh-agent zsh-kubectl-prompt)
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities dennish_kp dennish_kp.old ops
