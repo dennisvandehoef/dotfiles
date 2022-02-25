@@ -8,7 +8,7 @@ export ZSH="/Users/dennis.vandehoef/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="crunch"
+ZSH_THEME="xiotin"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,7 +70,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws docker docker-compose ssh-agent zsh-kubectl-prompt)
+plugins=(aws docker docker-compose ssh-agent)
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities dennish_kp dennish_kp.old ops
@@ -78,7 +78,6 @@ zstyle :omz:plugins:ssh-agent identities dennish_kp dennish_kp.old ops
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 
 export HISTSIZE=1000000
 export HISTFILESIZE=1000000000
@@ -99,5 +98,3 @@ export GPG_TTY=$(tty)
 #start in the most logical directory
 cd ~/code/arh
 
-source ~/code/private/dotfiles/prompt_helpers.sh
-RPROMPT='$(__prompt_aws_profile) $(__prompt_kube_context)'
