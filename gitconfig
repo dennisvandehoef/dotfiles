@@ -36,4 +36,4 @@
 [includeIf "gitdir:~/code/arh"]
   path = ~/code/private/dotfiles/gitconfig_cases/aroundhome
 [includeIf "gitdir:~/code/private"]
-  path = ~/code/private/dotfiles/private
+  path = ~/code/private/dotfiles/gitconfig_cases/private
