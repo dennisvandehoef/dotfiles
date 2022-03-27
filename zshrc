@@ -95,6 +95,8 @@ export PATH=$PATH:$HOME/go/bin
 
 export GPG_TTY=$(tty)
 
+eval "$(rbenv init - zsh)"
+
 #start in the most logical directory
 cd ~/code/arh
 
