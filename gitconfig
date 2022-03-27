@@ -1,6 +1,6 @@
 [user]
 	name = Dennis van de Hoef
-	email = dennis.vandehoef@aroundhome.de
+	email = dennisvdhoef@gmail.com
 [alias]
   br = branch
   ci = commit
@@ -32,3 +32,8 @@
   excludesfile = ~/.gitignore_global
 [init]
 	defaultBranch = main
+
+[includeIf "gitdir:~/code/arh"]
+  path = ~/code/private/dotfiles/gitconfig_cases/aroundhome
+[includeIf "gitdir:~/code/private"]
+  path = ~/code/private/dotfiles/private
