@@ -64,5 +64,8 @@ asdf plugin add yarn https://github.com/twuni/asdf-yarn.git
 asdf install
 
 # direnv
-echo -e "\n\n\n\n\ndirenv\n\n\n\n\n"
+echo -e "\n\n\n\n\ninstalling tools\n\n\n\n\n"
 curl -sfL https://direnv.net/install.sh | bash
+
+# sqlc
+go install github.com/kyleconroy/sqlc/cmd/sqlc@latest
