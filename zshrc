@@ -70,7 +70,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws docker docker-compose ssh-agent)
+plugins=(aws docker docker-compose ssh-agent asdf)
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities dennish_kp dennish_kp.old ops
@@ -99,6 +99,3 @@ eval "$(direnv hook zsh)"
 
 #start in the most logical directory
 cd ~/code/arh
-
-
-source ~/.asdf/asdf.sh

@@ -1,9 +1,6 @@
-tap hashicorp/tap
-
 update
 upgrade
 
-# Install Bash 4
 install bash
 
 install unrar

@@ -36,11 +36,32 @@ cp -r ~/.zshrc ~/.zshrc.old >>/dev/null
 rm -f ~/.zshrc >>/dev/null
 ln -s ~/code/private/dotfiles/zshrc ~/.zshrc
 
+if [[ $(uname -s) == "Darwin" ]]; then
+  source ~/code/private/dotfiles/setup_imac
+fi
+
 export bin_path=/usr/local/bin
 
 # asdf
 echo -e "\n\n\n\n\nasdf\n\n\n\n\n"
-# TODO ADD
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+
+cp -r ~/.asdfrc ~/.asdfrc.old >>/dev/null
+rm -f ~/.asdfrc >>/dev/null
+ln -s ~/code/private/dotfiles/asdfrc ~/.asdfrc
+
+cp -r ~/.tool-versions ~/.tool-versions.old >>/dev/null
+rm -f ~/.tool-versions >>/dev/null
+ln -s ~/code/private/dotfiles/tool-versions ~/.tool-versions
+
+asdf plugin add golang https://github.com/kennyp/asdf-golang.git
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf plugin add postgres https://github.com/smashedtoatoms/asdf-postgres.git
+asdf plugin add redis https://github.com/smashedtoatoms/asdf-redis.git
+asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+asdf plugin add yarn https://github.com/twuni/asdf-yarn.git
+
+asdf install
 
 # direnv
 echo -e "\n\n\n\n\ndirenv\n\n\n\n\n"
