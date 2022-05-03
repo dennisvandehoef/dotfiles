@@ -100,3 +100,5 @@ eval "$(rbenv init - zsh)"
 #start in the most logical directory
 cd ~/code/arh
 
+
+source /Users/dennis.vandehoef/.asdf/asdf.sh
