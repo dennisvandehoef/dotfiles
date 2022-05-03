@@ -35,3 +35,8 @@ ln -s  ~/code/private/dotfiles/xiotin.zsh-theme ~/.oh-my-zsh/custom/themes/xioti
 cp -r ~/.zshrc ~/.zshrc.old >>/dev/null
 rm -f ~/.zshrc >>/dev/null
 ln -s ~/code/private/dotfiles/zshrc ~/.zshrc
+
+
+# asdf
+echo -e "\n\n\n\n\nasdf\n\n\n\n\n"
+# TODO ADD
