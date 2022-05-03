@@ -36,7 +36,12 @@ cp -r ~/.zshrc ~/.zshrc.old >>/dev/null
 rm -f ~/.zshrc >>/dev/null
 ln -s ~/code/private/dotfiles/zshrc ~/.zshrc
 
+export bin_path=/usr/local/bin
 
 # asdf
 echo -e "\n\n\n\n\nasdf\n\n\n\n\n"
 # TODO ADD
+
+# direnv
+echo -e "\n\n\n\n\ndirenv\n\n\n\n\n"
+curl -sfL https://direnv.net/install.sh | bash

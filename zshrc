@@ -95,6 +95,7 @@ export PATH=$PATH:$HOME/go/bin
 
 export GPG_TTY=$(tty)
 
+eval "$(direnv hook zsh)"
 
 #start in the most logical directory
 cd ~/code/arh
