@@ -93,6 +93,8 @@ export PATH=$PATH:$PYTHON_BASE_PATH
 export PATH=$PATH:$PYTHON_BASE_PATH/bin
 export PATH=$PATH:$HOME/go/bin
 
+export GOPATH=$HOME/go
+
 export GPG_TTY=$(tty)
 
 eval "$(direnv hook zsh)"
