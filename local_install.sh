@@ -54,6 +54,10 @@ cp -r ~/.tool-versions ~/.tool-versions.old >>/dev/null
 rm -f ~/.tool-versions >>/dev/null
 ln -s ~/code/private/dotfiles/tool-versions ~/.tool-versions
 
+cp -r ~/.default-gems ~/.default-gems.old >>/dev/null
+rm -f ~/.default-gems >>/dev/null
+ln -s ~/code/private/dotfiles/default-gems ~/.default-gems
+
 asdf plugin add golang https://github.com/kennyp/asdf-golang.git
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf plugin add postgres https://github.com/smashedtoatoms/asdf-postgres.git
