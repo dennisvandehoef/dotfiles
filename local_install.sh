@@ -71,5 +71,10 @@ asdf install
 echo -e "\n\n\n\n\ninstalling tools\n\n\n\n\n"
 curl -sfL https://direnv.net/install.sh | bash
 
+mkdir -p ~/.config/direnv
+cp -r ~/.config/direnv/direnv.toml ~/.config/direnv/direnv.toml.old >>/dev/null
+rm -f ~/.config/direnv/direnv.toml >>/dev/null
+ln -s ~/code/private/dotfiles/direnv.toml ~/.config/direnv/direnv.toml
+
 # sqlc
 go install github.com/kyleconroy/sqlc/cmd/sqlc@latest
