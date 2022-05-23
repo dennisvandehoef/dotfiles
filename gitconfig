@@ -37,3 +37,6 @@
   path = ~/code/private/dotfiles/gitconfig_cases/aroundhome
 [includeIf "gitdir:~/code/private/"]
   path = ~/code/private/dotfiles/gitconfig_cases/private
+
+[url "git@codevault.io:"]
+	insteadOf = https://codevault.io/
