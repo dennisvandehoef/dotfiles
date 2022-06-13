@@ -19,6 +19,7 @@ install tmux
 install lftp
 install htop
 install wget
+install watch
 
 
 tap homebrew/cask
