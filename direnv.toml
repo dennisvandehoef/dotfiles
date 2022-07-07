@@ -1,2 +1,4 @@
 [whitelist]
 prefix = [ "/Users/dennis.vandehoef/code/arh/" ]
+[global]
+load_dotenv=true
