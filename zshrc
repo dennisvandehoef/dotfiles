@@ -103,4 +103,8 @@ export GPG_TTY=$(tty)
 eval "$(direnv hook zsh)"
 
 #start in the most logical directory
-cd ~/code/arh
+if [[ $USER == "dennis.vandehoef" ]]; then # work
+    cd ~/code/arh
+else
+    cd ~/code/private
+fi
