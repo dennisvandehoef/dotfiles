@@ -16,6 +16,7 @@
   ps = push
 [push]
   default = simple
+	autoSetupRemote = true
 [color]
   ui = auto
   branch = auto
