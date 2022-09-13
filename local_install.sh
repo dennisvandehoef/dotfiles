@@ -65,9 +65,9 @@ asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf plugin add postgres https://github.com/smashedtoatoms/asdf-postgres.git
 asdf plugin add redis https://github.com/smashedtoatoms/asdf-redis.git
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
-asdf plugin add yarn https://github.com/twuni/asdf-yarn.git
 asdf plugin add terraform https://github.com/Banno/asdf-hashicorp.git
 asdf plugin add terragrunt https://github.com/ohmer/asdf-terragrunt.git
+asdf plugin add yarn https://github.com/twuni/asdf-yarn.git
 
 asdf install
 
