@@ -59,6 +59,8 @@ rm -f ~/.default-gems >>/dev/null
 ln -s ~/code/private/dotfiles/default-gems ~/.default-gems
 
 asdf plugin add golang https://github.com/kennyp/asdf-golang.git
+asdf plugin-add istioctl https://github.com/virtualstaticvoid/asdf-istioctl.git
+asdf plugin-add kubectl https://github.com/asdf-community/asdf-kubectl.git
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf plugin add postgres https://github.com/smashedtoatoms/asdf-postgres.git
 asdf plugin add redis https://github.com/smashedtoatoms/asdf-redis.git

@@ -6,3 +6,5 @@ redis 6.0.16
 yarn 1.22.17
 terraform 0.14.7
 terragrunt 0.28.13
+istioctl 1.11.4
+kubectl 1.21.12
