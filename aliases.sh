@@ -6,6 +6,8 @@ alias arh="cd ~/code/arh"
 alias private="cd ~/code/private"
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 
+alias python=/usr/bin/python3
+
 # GIT
 alias g="git"
 alias gpl="git pl"
