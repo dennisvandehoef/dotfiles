@@ -80,5 +80,14 @@ cp -r ~/.config/direnv/direnv.toml ~/.config/direnv/direnv.toml.old >>/dev/null
 rm -f ~/.config/direnv/direnv.toml >>/dev/null
 ln -s ~/code/private/dotfiles/direnv.toml ~/.config/direnv/direnv.toml
 
+# yarn
+
+mkdir -p ~/.config/yarn/global
+cp -r ~/.config/yarn/global/package.json ~/.config/yarn/global/package.json.old >>/dev/null
+rm -f ~/.config/yarn/global/package.json >>/dev/null
+ln -s ~/code/private/dotfiles/package.json ~/.config/yarn/global/package.json
+
+yarn install --cwd ~/.config/yarn/global
+
 # sqlc
 go install github.com/kyleconroy/sqlc/cmd/sqlc@latest

@@ -95,6 +95,7 @@ PYTHON_BASE_PATH=$(python -m site --user-base)
 export PATH=$PATH:$PYTHON_BASE_PATH
 export PATH=$PATH:$PYTHON_BASE_PATH/bin
 export PATH=$PATH:$HOME/go/bin
+export PATH="$PATH:$(yarn global bin)"
 
 export GOPATH=$HOME/go
 
