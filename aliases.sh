@@ -17,8 +17,8 @@ source ~/code/private/dotfiles/aws-switch-to.sh
 alias staging="aws_switch_to staging"
 alias production="aws_switch_to production"
 alias services="aws_switch_to services"
-alias kaeuferportal="aws_switch_to kaeuferportal"
-alias development="aws_switch_to development"
+alias kaeuferportal="aws_switch_to kp"
+alias development="aws_switch_to dev"
 alias data="aws_switch_to data"
 
 update_ruby(){

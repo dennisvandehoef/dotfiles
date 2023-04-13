@@ -7,7 +7,7 @@ function aws_switch_to() {
   export AWS_ACCOUNT_NAME=$envname
   export AWS_DEFAULT_REGION=eu-central-1
 
-  aws sts get-caller-identity
+  arh aws login
 
   echo "Please provide the wished cluster name or type one of the following options:"
   echo " - Use 'list' or 'l' to list available clusters and select one"
