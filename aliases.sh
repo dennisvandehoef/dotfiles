@@ -2,8 +2,6 @@ alias ..="cd .."
 
 alias ls='ls -alhG'
 alias dotfiles="cd ~/code/private/dotfiles"
-alias arh="cd ~/code/arh"
-alias private="cd ~/code/private"
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 
 alias python=/usr/bin/python3
