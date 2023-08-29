@@ -12,6 +12,9 @@ alias gpl="git pl"
 alias gps="git push"
 alias gst="git st"
 
+# Docker
+alias docker-compose="docker compose"
+
 # AWS & EKS
 source ~/code/private/dotfiles/aws-switch-to.sh
 alias staging="aws_switch_to staging"
