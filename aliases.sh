@@ -14,6 +14,7 @@ alias gst="git st"
 
 # Docker
 alias docker-compose="docker compose"
+alias dclean="docker container prune -f && docker image prune -af --filter until=168h && docker volume prune -af"
 
 # AWS & EKS
 source ~/code/private/dotfiles/aws-switch-to.sh
