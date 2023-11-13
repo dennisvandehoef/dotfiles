@@ -1,0 +1,3 @@
+golang.org/x/tools/gopls
+github.com/sqlc-dev/sqlc/cmd/sqlc
+golang.org/x/vuln/cmd/govulncheck

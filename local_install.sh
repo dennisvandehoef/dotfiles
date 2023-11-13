@@ -58,6 +58,10 @@ cp -r ~/.default-gems ~/.default-gems.old >>/dev/null
 rm -f ~/.default-gems >>/dev/null
 ln -s ~/code/private/dotfiles/default-gems ~/.default-gems
 
+cp -r ~/.default-golang-pkgs ~/.default-golang-pkgs.old >>/dev/null
+rm -f ~/.default-golang-pkgs >>/dev/null
+ln -s ~/code/private/dotfiles/default-golang-pkgs ~/.default-golang-pkgs
+
 asdf plugin add golang https://github.com/kennyp/asdf-golang.git
 asdf plugin-add istioctl https://github.com/virtualstaticvoid/asdf-istioctl.git
 asdf plugin-add kubectl https://github.com/asdf-community/asdf-kubectl.git
