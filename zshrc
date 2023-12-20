@@ -98,11 +98,20 @@ export PATH=$PATH:$HOME/go/bin
 export PATH="$PATH:$(yarn global bin)"
 
 export GOPATH=$HOME/go
+export GOPRIVATE=codevault.io
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
 export GPG_TTY=$(tty)
 
 eval "$(direnv hook zsh)"
+
+if [ -f ~/secrets.sh ] ; then
+    echo -n "loading secrets "
+    source ~/secrets.sh
+    echo "done"
+else
+    echo "skiped loading secrets"
+fi
 
 #start in the most logical directory
 if [[ ! $(pwd) =~ "/code/" ]] ; then
