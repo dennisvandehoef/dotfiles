@@ -99,6 +99,8 @@ export PATH="$PATH:$(yarn global bin)"
 
 export GOPATH=$HOME/go
 export GOPRIVATE=codevault.io
+export GOPROXY=direct
+export CGO_ENABLED=0
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
 export GPG_TTY=$(tty)
