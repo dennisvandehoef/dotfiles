@@ -46,6 +46,13 @@ export bin_path=/usr/local/bin
 echo -e "\n\n\n\n\nasdf\n\n\n\n\n"
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 
+. "$HOME/.asdf/asdf.sh"
+
+export GOPATH=$HOME/go
+export GOPROXY=direct
+export CGO_ENABLED=0
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true
+
 cp -r ~/.asdfrc ~/.asdfrc.old >>/dev/null
 rm -f ~/.asdfrc >>/dev/null
 ln -s ~/code/private/dotfiles/asdfrc ~/.asdfrc
@@ -92,6 +99,3 @@ rm -f ~/.config/yarn/global/package.json >>/dev/null
 ln -s ~/code/private/dotfiles/package.json ~/.config/yarn/global/package.json
 
 yarn install --cwd ~/.config/yarn/global
-
-# sqlc
-go install github.com/kyleconroy/sqlc/cmd/sqlc@latest
