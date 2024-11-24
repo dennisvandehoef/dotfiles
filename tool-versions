@@ -1,10 +1,7 @@
-ruby 2.7.2 3.0.2 3.1.1
-golang 1.17
-nodejs 18.12.1
-postgres 12.9
-redis 6.0.16
-yarn 1.22.17
-terraform 0.14.7
-terragrunt 0.28.13
-istioctl 1.11.4
-kubectl 1.21.12
+ruby 3.3.6
+golang 1.23
+nodejs 23.3.0
+yarn 1.22.22
+terraform 1.5.5
+terragrunt 0.58.15
+kubectl 1.31.3

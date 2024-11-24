@@ -2,7 +2,6 @@ update
 upgrade
 
 install bash
-
 install unrar
 
 install rename
@@ -21,6 +20,7 @@ install htop
 install wget
 install watch
 
+install derailed/k9s/k9s
 
 tap homebrew/cask
 install rowanj-gitx
