@@ -59,6 +59,10 @@ echo -e "\n\n\n\n\nSetup mac specific > HomeBrew\n\n\n\n\n"
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+echo >> /Users/dennis.vandehoef/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/dennis.vandehoef/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 #install brewfile
 while read line
 do
