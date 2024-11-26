@@ -1,5 +1,5 @@
-ruby 3.3.6
-golang 1.23
+ruby 3.3.0
+golang 1.23.2
 nodejs 23.3.0
 yarn 1.22.22
 terraform 1.5.5
