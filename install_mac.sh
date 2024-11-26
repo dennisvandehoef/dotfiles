@@ -63,8 +63,33 @@ echo >> /Users/dennis.vandehoef/.zprofile
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/dennis.vandehoef/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-#install brewfile
-while read line
-do
-  [ "${line###*}" ] && brew $line
-done < ~/code/private/dotfiles/Brewfile
+brew update
+brew upgrade
+
+brew install bash
+brew install unrar
+
+brew install rename
+brew install automake
+brew install autoconf
+brew install curl
+brew install ack
+brew install readline
+brew install pv
+brew install rename
+brew install tree
+brew install tmux
+brew install lftp
+brew install htop
+brew install libyaml
+brew install wget
+brew install watch
+
+brew install derailed/k9s/k9s
+
+brew tap homebrew/cask
+brew install rowanj-gitx
+brew install sequel-pro
+
+brew link
+brew cleanup
