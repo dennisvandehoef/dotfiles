@@ -2,7 +2,6 @@ alias ..="cd .."
 
 alias ls='ls -alhG'
 alias dotfiles="cd ~/code/private/dotfiles"
-alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 
 alias python=/usr/bin/python3
 
@@ -33,4 +32,3 @@ update_ruby(){
   sed -i -E "s/ruby [a-z0-9.-]{2,}/ruby $version/" Gemfile.lock
   docker-compose build
 }
-
