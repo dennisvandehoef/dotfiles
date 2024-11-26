@@ -91,11 +91,24 @@ set completion-ignore-case on
 
 source ~/code/private/dotfiles/aliases.sh
 
-PYTHON_BASE_PATH=$(python -m site --user-base)
-export PATH=$PATH:$PYTHON_BASE_PATH
-export PATH=$PATH:$PYTHON_BASE_PATH/bin
+if command -v python 2>&1 >/dev/null
+then
+    PYTHON_BASE_PATH=$(python -m site --user-base)
+    export PATH=$PATH:$PYTHON_BASE_PATH
+    export PATH=$PATH:$PYTHON_BASE_PATH/bin
+fi
+
 export PATH=$PATH:$HOME/go/bin
-export PATH="$PATH:$(yarn global bin)"
+
+if command -v yarn 2>&1 >/dev/null
+then
+    export PATH="$PATH:$(yarn global bin)"
+fi
+
+if command -v direnv 2>&1 >/dev/null
+then
+    eval "$(direnv hook zsh)"
+fi
 
 export GOPATH=$HOME/go
 export GOPRIVATE=codevault.io
@@ -105,7 +118,6 @@ export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
 export GPG_TTY=$(tty)
 
-eval "$(direnv hook zsh)"
 
 if [ -f ~/secrets.sh ] ; then
     echo -n "loading secrets "
