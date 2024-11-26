@@ -39,6 +39,7 @@ asdf install
 
 # direnv
 echo -e "\n\n\n\n\ninstalling tools\n\n\n\n\n"
+echo -e "DirEnv\n"
 curl -sfL https://direnv.net/install.sh | bash
 
 mkdir -p ~/.config/direnv
@@ -47,6 +48,7 @@ rm -f ~/.config/direnv/direnv.toml >>/dev/null
 ln -s ~/code/private/dotfiles/direnv.toml ~/.config/direnv/direnv.toml
 
 # yarn
+echo -e "yarn\n"
 
 mkdir -p ~/.config/yarn/global
 cp -r ~/.config/yarn/global/package.json ~/.config/yarn/global/package.json.old >>/dev/null

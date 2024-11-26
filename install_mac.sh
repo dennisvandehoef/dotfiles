@@ -83,6 +83,7 @@ brew install lftp
 brew install htop
 brew install libyaml
 brew install wget
+brew install gpg
 brew install watch
 
 brew install derailed/k9s/k9s
