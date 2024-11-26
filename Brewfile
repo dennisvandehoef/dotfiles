@@ -8,7 +8,6 @@ install rename
 install automake
 install autoconf
 install curl
-install watch
 install ack
 install readline
 install pv
@@ -17,6 +16,7 @@ install tree
 install tmux
 install lftp
 install htop
+install libyaml
 install wget
 install watch
 

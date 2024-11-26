@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo -e "\n\n\n\n\nSetup mac specific\n\n\n\n\n"
+echo -e "\n\n\n\n\nSetup mac specific > Settings\n\n\n\n\n"
 
 # Some settings
 echo "Disable the sound effects on boot"
@@ -54,6 +54,10 @@ defaults write com.apple.dock launchanim -bool false
 
 echo "Don't show recently used applications in the Dock"
 defaults write com.Apple.Dock show-recents -bool false
+
+echo -e "\n\n\n\n\nSetup mac specific > HomeBrew\n\n\n\n\n"
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 #install brewfile
 while read line
