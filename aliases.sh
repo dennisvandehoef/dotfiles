@@ -3,8 +3,6 @@ alias ..="cd .."
 alias ls='ls -alhG'
 alias dotfiles="cd ~/code/private/dotfiles"
 
-alias python=/usr/bin/python3
-
 # GIT
 alias g="git"
 alias gpl="git pl"
