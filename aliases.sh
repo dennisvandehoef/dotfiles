@@ -32,3 +32,7 @@ update_ruby(){
   sed -i -E "s/ruby [a-z0-9.-]{2,}/ruby $version/" Gemfile.lock
   docker-compose build
 }
+
+function cursor {
+  open -a "/Applications/Cursor.app" "$@"
+}
