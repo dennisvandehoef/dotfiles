@@ -89,6 +89,12 @@ export HISTCONTROL=ignorespace:ignoredups
 set show-all-if-ambiguous on
 set completion-ignore-case on
 
+if [ -f ~/.asdf/asdf.sh ] ; then
+    . "$HOME/.asdf/asdf.sh"
+  export PATH="$HOME/.asdf/shims:$PATH"
+  . "$HOME/.asdf/completions/asdf.bash"
+fi
+
 source ~/code/private/dotfiles/aliases.sh
 
 if command -v python 2>&1 >/dev/null
