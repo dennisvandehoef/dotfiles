@@ -86,7 +86,7 @@ brew install wget
 brew install gpg
 brew install watch
 
-brew install derailed/k9s/k9s
+brew install --cask freelens
 
 brew tap homebrew/cask
 brew install rowanj-gitx
