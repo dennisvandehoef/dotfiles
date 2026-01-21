@@ -33,7 +33,6 @@ asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 asdf plugin add terraform https://github.com/Banno/asdf-hashicorp.git
 asdf plugin add terragrunt https://github.com/ohmer/asdf-terragrunt.git
-asdf plugin add yarn https://github.com/twuni/asdf-yarn.git
 
 asdf install
 
@@ -46,13 +45,3 @@ mkdir -p ~/.config/direnv
 cp -r ~/.config/direnv/direnv.toml ~/.config/direnv/direnv.toml.old >>/dev/null
 rm -f ~/.config/direnv/direnv.toml >>/dev/null
 ln -s ~/code/private/dotfiles/direnv.toml ~/.config/direnv/direnv.toml
-
-# yarn
-echo -e "yarn\n"
-
-mkdir -p ~/.config/yarn/global
-cp -r ~/.config/yarn/global/package.json ~/.config/yarn/global/package.json.old >>/dev/null
-rm -f ~/.config/yarn/global/package.json >>/dev/null
-ln -s ~/code/private/dotfiles/package.json ~/.config/yarn/global/package.json
-
-yarn install --cwd ~/.config/yarn/global
