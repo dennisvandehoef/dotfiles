@@ -1,7 +1,6 @@
 ruby 3.3.6
 golang 1.23.2
-nodejs 23.3.0
-yarn 1.22.22
+nodejs 25.4.0
 terraform 1.5.5
 terragrunt 0.58.15
 kubectl 1.31.3
