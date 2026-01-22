@@ -85,6 +85,7 @@ brew install libyaml
 brew install wget
 brew install gpg
 brew install watch
+brew install mkcert
 
 brew install --cask freelens
 
