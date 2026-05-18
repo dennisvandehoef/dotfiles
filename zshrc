@@ -95,8 +95,6 @@ if [ -f ~/.asdf/asdf.sh ] ; then
   . "$HOME/.asdf/completions/asdf.bash"
 fi
 
-source ~/code/private/dotfiles/aliases.sh
-
 if command -v python 2>&1 >/dev/null
 then
     PYTHON_BASE_PATH=$(python -m site --user-base)
@@ -125,6 +123,21 @@ export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 export GPG_TTY=$(tty)
 
 
+export ASDF_NODEJS_AUTO_ENABLE_COREPACK=true
+export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=true
+
+# lean-ctx shell hook — begin
+if [ -f "/Users/dennis.vandehoef/.config/lean-ctx/shell-hook.zsh" ]; then
+. "/Users/dennis.vandehoef/.config/lean-ctx/shell-hook.zsh"
+fi
+# lean-ctx shell hook — end
+
+# >>> lean-ctx agent aliases >>>
+alias claude='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" claude'
+alias codex='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" codex'
+alias gemini='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" gemini'
+# <<< lean-ctx agent aliases <<<
+
 if [ -f ~/secrets.sh ] ; then
     echo -n "loading secrets "
     source ~/secrets.sh
@@ -141,3 +154,5 @@ if [[ ! $(pwd) =~ "/code/" ]] ; then
         cd ~/code/private
     fi
 fi
+
+source ~/code/private/dotfiles/aliases.sh
