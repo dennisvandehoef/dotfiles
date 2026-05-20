@@ -1,0 +1,28 @@
+---
+description: All prompts in prompts/ — version field, semver bumps, version in agent output
+globs: prompts/**
+alwaysApply: false
+---
+
+# Prompt versioning
+
+Applies to every file under `prompts/`.
+
+## Version field
+
+- Each prompt must include `**Version:** MAJOR.MINOR.PATCH` near the top (after any slash-command line, if present).
+- When creating a new prompt, start at `1.0.0` unless you are copying an existing versioned prompt.
+
+## Semver bumps
+
+When editing a prompt, bump `**Version:**` using semver:
+
+- **PATCH** — clarifications, typos, no behavior change
+- **MINOR** — new steps or stricter checks without breaking existing flows
+- **MAJOR** — phase reorder, changed DONE criteria, or breaking workflow assumptions
+
+## Agent output
+
+Every prompt must instruct the agent to **always** include the version in final user-facing output, using a stable prefix derived from the prompt name (e.g. `babysit v1.0.0 — DONE: …`). The version in output must match `**Version:**` in the file exactly.
+
+When adding or changing output rules, keep the version prefix requirement in sync with the bumped version.
